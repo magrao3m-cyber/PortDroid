@@ -130,10 +130,12 @@ class MainActivity : ComponentActivity() {
                                     uiState = jogosViewModel.uiState,
                                     termoBusca = jogosViewModel.termoBusca,
                                     pastaDownloads = jogosViewModel.pastaDownloads,
+                                    idPastaAtual = jogosViewModel.obterIdPastaConfigurada(),
                                     onBuscaAlterada = { novoTexto -> jogosViewModel.atualizarBusca(novoTexto) },
                                     onAcaoClick = { jogo -> jogosViewModel.executarAcaoJogo(this@MainActivity, jogo) },
                                     onRefreshClick = { jogosViewModel.carregarListaDeJogos() },
                                     onVarrerInternetClick = { jogosViewModel.varrerInternetPorNovosPorts() },
+                                    onSalvarIdPasta = { novaPasta -> jogosViewModel.salvarIdPastaDrive(novaPasta) },
                                     estaVarrendo = jogosViewModel.estaVarrendoInternet
                                 )
                                 1 -> CatalogScreen(

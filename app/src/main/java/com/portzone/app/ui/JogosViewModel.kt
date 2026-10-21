@@ -1,8 +1,8 @@
 package com.portzone.app.ui
 
 import android.app.Application
-import android.app.DownloadManager
 import android.content.Context
+import android.content.Intent
 import android.net.Uri
 import android.os.Environment
 import androidx.compose.runtime.getValue
@@ -51,6 +51,19 @@ class JogosViewModel(
         escutarEventosDeDownload()
     }
 
+    fun obterIdPastaConfigurada(): String {
+        val prefs = getApplication<Application>().getSharedPreferences("portzone_drive_prefs", Context.MODE_PRIVATE)
+        return prefs.getString("custom_drive_folder_id", GoogleDriveService.ID_PASTA_PADRAO)
+            ?: GoogleDriveService.ID_PASTA_PADRAO
+    }
+
+    fun salvarIdPastaDrive(novoIdOuLink: String) {
+        val idExtraido = GoogleDriveService.extrairIdPasta(novoIdOuLink)
+        val prefs = getApplication<Application>().getSharedPreferences("portzone_drive_prefs", Context.MODE_PRIVATE)
+        prefs.edit().putString("custom_drive_folder_id", idExtraido).apply()
+        carregarListaDeJogos()
+    }
+
     /**
      * Executa a limpeza e sincroniza os botões (ótimo para chamar no onResume da Activity)
      */
@@ -72,7 +85,7 @@ class JogosViewModel(
     }
 
     /**
-     * Escuta eventos globais do DownloadTracker (emitidos pelo BroadcastReceiver quando o DownloadManager termina)
+     * Escuta eventos globais do DownloadTracker
      */
     private fun escutarEventosDeDownload() {
         viewModelScope.launch {
@@ -128,7 +141,8 @@ class JogosViewModel(
         viewModelScope.launch {
             uiState = TelaJogosUiState.Carregando
             try {
-                val listaDrive = driveService.listarJogosComCategoriasECapas()
+                val idPasta = obterIdPastaConfigurada()
+                val listaDrive = driveService.listarJogosComCategoriasECapas(idPasta)
 
                 val agora = System.currentTimeMillis()
                 val trintaDias = 30L * 24 * 60 * 60 * 1000
@@ -169,32 +183,77 @@ class JogosViewModel(
     fun executarAcaoJogo(context: Context, jogo: JogoPort) {
         val arquivoLocal = File(pastaDownloads, jogo.nome)
 
+        // Se for atalho de projeto (.url ou nome indicando link), abre diretamente no navegador
+        if (jogo.nome.contains("(Link / Instruções)") || jogo.mimeType == "text/x-url" || jogo.nome.endsWith(".url", ignoreCase = true)) {
+            abrirLinkProjetoOuArquivo(context, jogo)
+            return
+        }
+
         when (jogo.statusLocal) {
             StatusJogo.PRONTO_PARA_INSTALAR -> {
                 InstallHelper.instalarApk(context, arquivoLocal)
             }
             StatusJogo.DISPONIVEL_DRIVE, StatusJogo.ATUALIZACAO_DISPONIVEL -> {
-                iniciarDownloadNativo(context, jogo)
+                iniciarDownloadAutenticado(context, jogo)
             }
             StatusJogo.BAIXANDO -> {}
         }
     }
 
-    fun iniciarDownloadNativo(context: Context = getApplication(), jogo: JogoPort) {
-        val linkDiretoDrive = "https://drive.google.com/uc?export=download&id=${jogo.id}&confirm=t"
+    /**
+     * Download autenticado direto pelo serviço Google Drive.
+     * Funciona em pastas privadas de Contas de Serviço sem redirecionar para tela de login do Google.
+     */
+    fun iniciarDownloadAutenticado(context: Context = getApplication(), jogo: JogoPort) {
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                withContext(Dispatchers.Main) {
+                    atualizarStatusJogo(jogo.id, StatusJogo.BAIXANDO)
+                }
+                val arquivoDestino = File(pastaDownloads, jogo.nome)
+                driveService.baixarJogo(jogo.id, arquivoDestino.absolutePath)
 
-        val request = DownloadManager.Request(Uri.parse(linkDiretoDrive))
-            .setTitle("Baixando ${jogo.nome}")
-            .setDescription("Seu port está sendo baixado em segundo plano...")
-            .setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
-            .setDestinationInExternalFilesDir(context, Environment.DIRECTORY_DOWNLOADS, jogo.nome)
-            .setAllowedOverMetered(true)
-            .setAllowedOverRoaming(true)
+                withContext(Dispatchers.Main) {
+                    atualizarStatusJogo(jogo.id, StatusJogo.PRONTO_PARA_INSTALAR)
+                    if (jogo.nome.endsWith(".apk", ignoreCase = true)) {
+                        InstallHelper.instalarApk(context, arquivoDestino)
+                    }
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+                withContext(Dispatchers.Main) {
+                    atualizarStatusJogo(jogo.id, StatusJogo.DISPONIVEL_DRIVE)
+                }
+            }
+        }
+    }
 
-        val downloadManager = context.getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
-        downloadManager.enqueue(request)
+    private fun abrirLinkProjetoOuArquivo(context: Context, jogo: JogoPort) {
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                val tempFile = File(context.cacheDir, "temp_${jogo.id}.url")
+                driveService.baixarJogo(jogo.id, tempFile.absolutePath)
+                val content = tempFile.readText()
+                tempFile.delete()
 
-        atualizarStatusJogo(jogo.id, StatusJogo.BAIXANDO)
+                val urlMatch = Regex("(?i)URL=(https?://[^\\r\\n]+)").find(content)
+                val targetUrl = urlMatch?.groupValues?.get(1) ?: "https://drive.google.com/open?id=${jogo.id}"
+
+                withContext(Dispatchers.Main) {
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(targetUrl)).apply {
+                        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    }
+                    context.startActivity(intent)
+                }
+            } catch (e: Exception) {
+                withContext(Dispatchers.Main) {
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://drive.google.com/open?id=${jogo.id}")).apply {
+                        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    }
+                    context.startActivity(intent)
+                }
+            }
+        }
     }
 
     private fun atualizarStatusJogo(jogoId: String, novoStatus: StatusJogo) {

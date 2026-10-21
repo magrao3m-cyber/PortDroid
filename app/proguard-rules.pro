@@ -17,3 +17,12 @@
 -dontwarn androidx.security.crypto.**
 -keep class androidx.security.crypto.** { *; }
 -keep class com.google.crypto.tink.** { *; }
+
+# Google Auth Library rules
+-keep class com.google.auth.** { *; }
+-dontwarn com.google.auth.**
+-keep class com.google.api.client.json.gson.** { *; }
+-keep class com.google.gson.** { *; }
+
+# App Models
+-keep class com.portzone.app.data.model.** { *; }

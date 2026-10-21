@@ -31,90 +31,170 @@ class GoogleDriveService(private val driveService: Drive) {
     )
 
     /**
-     * Estrutura a leitura das subpastas do Drive como Categorias (ex: "Ação", "Tiro", "Corrida")
-     * e associa automaticamente arquivos de imagem (.jpg ou .png) com o mesmo nome do APK como capa.
+     * Estrutura a leitura das subpastas do Drive como Categorias e Jogos em modo BULK de alta performance.
+     * Elimina centenas de requisições HTTP individuais, carregando o catálogo completo em poucos segundos.
      */
     suspend fun listarJogosComCategoriasECapas(idPastaRaiz: String = ID_PASTA_PADRAO): List<JogoPort> = withContext(Dispatchers.IO) {
+        val idLimpo = extrairIdPasta(idPastaRaiz)
         val todosOsJogos = mutableListOf<JogoPort>()
 
         try {
-            // 1. Busca todas as subpastas dentro da pasta raiz
-            val queryPastas = "'$idPastaRaiz' in parents and mimeType = 'application/vnd.google-apps.folder' and trashed = false"
-            val resultadoPastas = driveService.files().list()
-                .setQ(queryPastas)
-                .setSpaces("drive")
-                .setFields("files(id, name)")
-                .execute()
+            // 1. Busca todas as subpastas dentro da pasta raiz com suporte a paginação
+            val pastasMap = mutableMapOf<String, String>() // id -> nome
+            var pageTokenPastas: String? = null
+            do {
+                val reqPastas = driveService.files().list()
+                    .setQ("'$idLimpo' in parents and mimeType = 'application/vnd.google-apps.folder' and trashed = false")
+                    .setSpaces("drive")
+                    .setFields("nextPageToken, files(id, name)")
+                    .setPageSize(1000)
+                if (!pageTokenPastas.isNullOrEmpty()) {
+                    reqPastas.pageToken = pageTokenPastas
+                }
+                val resultadoPastas = reqPastas.execute()
+                resultadoPastas.files?.forEach { pasta ->
+                    if (pasta.id != null && pasta.name != null) {
+                        pastasMap[pasta.id] = pasta.name
+                    }
+                }
+                pageTokenPastas = resultadoPastas.nextPageToken
+            } while (!pageTokenPastas.isNullOrEmpty())
 
-            val subpastas = resultadoPastas.files ?: emptyList()
+            // 2. Busca todos os arquivos que não são pastas de forma BULK (em lote)
+            // Em vez de 968 requisições lentas, faz apenas 2 a 3 chamadas paginadas de 1000 itens
+            val arquivosPorPasta = mutableMapOf<String, MutableList<com.google.api.services.drive.model.File>>()
+            val arquivosRaiz = mutableListOf<com.google.api.services.drive.model.File>()
+            var pageTokenArquivos: String? = null
 
-            // Se não houver subpastas, busca direto na raiz como categoria "Geral"
-            if (subpastas.isEmpty()) {
-                buscarJogosNaPasta(idPastaRaiz, "Geral", todosOsJogos)
-            } else {
-                // 2. Para cada subpasta (Categoria), busca os jogos e imagens dentro dela
-                for (pasta in subpastas) {
-                    val nomeCategoria = pasta.name ?: "Geral"
-                    buscarJogosNaPasta(pasta.id, nomeCategoria, todosOsJogos)
+            do {
+                val reqArquivos = driveService.files().list()
+                    .setQ("trashed = false and mimeType != 'application/vnd.google-apps.folder'")
+                    .setSpaces("drive")
+                    .setFields("nextPageToken, files(id, name, size, modifiedTime, thumbnailLink, mimeType, parents)")
+                    .setPageSize(1000)
+                if (!pageTokenArquivos.isNullOrEmpty()) {
+                    reqArquivos.pageToken = pageTokenArquivos
+                }
+                val resultadoArquivos = reqArquivos.execute()
+                resultadoArquivos.files?.forEach { file ->
+                    val parents = file.parents ?: emptyList()
+                    if (parents.contains(idLimpo)) {
+                        arquivosRaiz.add(file)
+                    }
+                    for (p in parents) {
+                        if (pastasMap.containsKey(p)) {
+                            arquivosPorPasta.getOrPut(p) { mutableListOf() }.add(file)
+                        }
+                    }
+                }
+                pageTokenArquivos = resultadoArquivos.nextPageToken
+            } while (!pageTokenArquivos.isNullOrEmpty())
+
+            // 3. Montar os itens de JogoPort cruzando pastas e arquivos em memória RAM:
+            for ((pastaId, nomePasta) in pastasMap) {
+                val arquivos = arquivosPorPasta[pastaId] ?: emptyList()
+
+                val apks = arquivos.filter {
+                    it.name.endsWith(".apk", ignoreCase = true) ||
+                    it.name.endsWith(".zip", ignoreCase = true) ||
+                    it.name.endsWith(".7z", ignoreCase = true) ||
+                    it.name.endsWith(".z64", ignoreCase = true)
+                }
+
+                val imagens = arquivos.filter {
+                    it.name.endsWith(".jpg", ignoreCase = true) ||
+                    it.name.endsWith(".png", ignoreCase = true) ||
+                    it.name.endsWith(".jpeg", ignoreCase = true)
+                }
+
+                val nomeLimpo = nomePasta.replace(Regex("\\s*\\(\\d+\\)$"), "").trim()
+                val categoria = extrairCategoria(nomeLimpo)
+
+                if (apks.isNotEmpty()) {
+                    for (apk in apks) {
+                        val nomeSemExtensao = apk.name.substringBeforeLast(".")
+                        val imagemCorrespondente = imagens.find {
+                            it.name.substringBeforeLast(".").equals(nomeSemExtensao, ignoreCase = true)
+                        }
+                        val urlCapa = imagemCorrespondente?.thumbnailLink ?: apk.thumbnailLink
+
+                        todosOsJogos.add(
+                            JogoPort(
+                                id = apk.id,
+                                nome = apk.name,
+                                tamanho = apk.getSize(),
+                                dataModificacaoDrive = apk.modifiedTime?.value ?: 0L,
+                                categoria = categoria,
+                                urlCapa = urlCapa,
+                                mimeType = apk.mimeType
+                            )
+                        )
+                    }
+                } else {
+                    // Se não houver APK direto, mapeia atalhos de projetos (.url) ou arquivos de instruções (.txt)
+                    val urlFile = arquivos.find { it.name.endsWith(".url", ignoreCase = true) }
+                    val txtFile = arquivos.find { it.name.endsWith(".txt", ignoreCase = true) }
+                    val primeiro = urlFile ?: txtFile ?: arquivos.firstOrNull()
+
+                    if (primeiro != null) {
+                        todosOsJogos.add(
+                            JogoPort(
+                                id = primeiro.id,
+                                nome = "$nomeLimpo (Link / Instruções)",
+                                tamanho = primeiro.getSize(),
+                                dataModificacaoDrive = primeiro.modifiedTime?.value ?: 0L,
+                                categoria = categoria,
+                                urlCapa = imagens.firstOrNull()?.thumbnailLink,
+                                mimeType = primeiro.mimeType
+                            )
+                        )
+                    }
                 }
             }
+
+            // 4. Arquivos diretamente na raiz da pasta
+            for (apk in arquivosRaiz) {
+                if (apk.name.endsWith(".apk", ignoreCase = true) ||
+                    apk.name.endsWith(".zip", ignoreCase = true) ||
+                    apk.name.endsWith(".7z", ignoreCase = true)) {
+                    todosOsJogos.add(
+                        JogoPort(
+                            id = apk.id,
+                            nome = apk.name,
+                            tamanho = apk.getSize(),
+                            dataModificacaoDrive = apk.modifiedTime?.value ?: 0L,
+                            categoria = "Geral",
+                            urlCapa = apk.thumbnailLink,
+                            mimeType = apk.mimeType
+                        )
+                    )
+                }
+            }
+
         } catch (e: Exception) {
             e.printStackTrace()
-            // Fallback: se falhar na busca com subpastas, tenta listar direto na pasta raiz
-            try {
-                buscarJogosNaPasta(idPastaRaiz, "Geral", todosOsJogos)
-            } catch (e2: Exception) {
-                e2.printStackTrace()
-            }
+            throw e
         }
 
+        todosOsJogos.sortBy { it.nome }
         return@withContext todosOsJogos
     }
 
-    private fun buscarJogosNaPasta(pastaId: String, categoria: String, listaParaPreencher: MutableList<JogoPort>) {
-        val queryArquivos = "'$pastaId' in parents and mimeType != 'application/vnd.google-apps.folder' and trashed = false"
-        val resultadoArquivos = driveService.files().list()
-            .setQ(queryArquivos)
-            .setSpaces("drive")
-            .setFields("files(id, name, size, modifiedTime, thumbnailLink, mimeType)")
-            .execute()
-
-        val arquivos = resultadoArquivos.files ?: return
-
-        // Separa os APKs e arquivos de jogos das Imagens
-        val apks = arquivos.filter {
-            it.name.endsWith(".apk", ignoreCase = true) ||
-            it.name.endsWith(".zip", ignoreCase = true) ||
-            it.name.endsWith(".7z", ignoreCase = true) ||
-            it.name.endsWith(".z64", ignoreCase = true)
-        }
-        val imagens = arquivos.filter {
-            it.name.endsWith(".jpg", ignoreCase = true) ||
-            it.name.endsWith(".png", ignoreCase = true) ||
-            it.name.endsWith(".jpeg", ignoreCase = true)
-        }
-
-        for (apk in apks) {
-            val nomeSemExtensao = apk.name.substringBeforeLast(".")
-
-            // Busca se existe uma imagem com o mesmo nome na pasta para servir de capa
-            val imagemCorrespondente = imagens.find {
-                it.name.substringBeforeLast(".").equals(nomeSemExtensao, ignoreCase = true)
+    private fun extrairCategoria(nomePasta: String): String {
+        val lower = nomePasta.lowercase()
+        return when {
+            lower.contains("touch") -> "Touch Ports"
+            lower.contains("source engine") || lower.contains("xash") -> "Source / Valve"
+            lower.contains("recomp") -> "PC Recomp"
+            lower.contains("xcom") || lower.contains("openxcom") -> "Estratégia"
+            lower.contains("mario") || lower.contains("zelda") || lower.contains("sonic") || lower.contains("star fox") -> "Clássicos"
+            lower.contains("doom") || lower.contains("quake") || lower.contains("wolfenstein") || lower.contains("duke") -> "FPS Retrô"
+            lower.contains("rpg") || lower.contains("morrowind") || lower.contains("undertale") -> "RPG / Aventura"
+            nomePasta.contains(" - ") -> {
+                val partes = nomePasta.split(" - ")
+                if (partes.size > 1 && partes[1].isNotBlank()) partes[1].trim() else "Geral"
             }
-
-            val urlCapa = imagemCorrespondente?.thumbnailLink ?: apk.thumbnailLink
-
-            listaParaPreencher.add(
-                JogoPort(
-                    id = apk.id,
-                    nome = apk.name,
-                    tamanho = apk.getSize(),
-                    dataModificacaoDrive = apk.modifiedTime?.value ?: 0L,
-                    categoria = categoria,
-                    urlCapa = urlCapa,
-                    mimeType = apk.mimeType
-                )
-            )
+            else -> "Geral"
         }
     }
 
@@ -123,7 +203,8 @@ class GoogleDriveService(private val driveService: Drive) {
     }
 
     /**
-     * Download do arquivo para o caminho de destino com suporte a progresso (% de 0.0f a 1.0f).
+     * Download autenticado do arquivo para o caminho de destino com suporte a progresso (% de 0.0f a 1.0f).
+     * Utiliza as credenciais da Conta de Serviço para permitir downloads de pastas privadas sem redirecionamentos de login.
      */
     suspend fun baixarJogo(
         fileId: String,
@@ -164,6 +245,16 @@ class GoogleDriveService(private val driveService: Drive) {
 
     companion object {
         const val ID_PASTA_PADRAO = "1ZaaRjdB92s_JjgrzYIMnjRQ6Ns2yM7Fg"
+
+        /**
+         * Extrai o ID da pasta caso o usuário cole um link completo do Google Drive.
+         */
+        fun extrairIdPasta(linkOuId: String): String {
+            val trimmed = linkOuId.trim()
+            val regex = Regex("folders/([a-zA-Z0-9_-]+)")
+            val match = regex.find(trimmed)
+            return match?.groupValues?.get(1) ?: trimmed
+        }
 
         /**
          * Inicializa o GoogleDriveService de forma 100% segura utilizando o Android Keystore

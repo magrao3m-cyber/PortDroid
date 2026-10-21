@@ -8,6 +8,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Clear
+import androidx.compose.material.icons.filled.Folder
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.SdCard
 import androidx.compose.material.icons.filled.Search
@@ -20,7 +21,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.portzone.app.data.model.JogoPort
+import com.portzone.app.data.service.GoogleDriveService
 import com.portzone.app.ui.TelaJogosUiState
 import com.portzone.app.ui.components.CardJogoPremium
 import com.portzone.app.ui.components.DialogoGerenciadorDeDados
@@ -32,15 +35,18 @@ fun TelaPrincipalComAbas(
     uiState: TelaJogosUiState,
     termoBusca: String,
     pastaDownloads: File,
+    idPastaAtual: String = GoogleDriveService.ID_PASTA_PADRAO,
     onBuscaAlterada: (String) -> Unit,
     onAcaoClick: (JogoPort) -> Unit,
     onRefreshClick: () -> Unit = {},
     onVarrerInternetClick: () -> Unit = {},
+    onSalvarIdPasta: (String) -> Unit = {},
     estaVarrendo: Boolean = false,
     modifier: Modifier = Modifier
 ) {
     var abaSelecionada by remember { mutableStateOf(0) }
     var exibirDialogoDados by remember { mutableStateOf(false) }
+    var exibirDialogoPasta by remember { mutableStateOf(false) }
 
     Scaffold(
         modifier = modifier,
@@ -67,6 +73,15 @@ fun TelaPrincipalComAbas(
                     )
 
                     Row(verticalAlignment = Alignment.CenterVertically) {
+                        // Botão para configurar a pasta do Google Drive
+                        IconButton(onClick = { exibirDialogoPasta = true }) {
+                            Icon(
+                                imageVector = Icons.Default.Folder,
+                                contentDescription = "Configurar Pasta do Google Drive",
+                                tint = Color(0xFF00E5FF)
+                            )
+                        }
+
                         // Botão para gerenciar arquivos de dados e ROMs via SAF
                         IconButton(onClick = { exibirDialogoDados = true }) {
                             Icon(
@@ -267,6 +282,69 @@ fun TelaPrincipalComAbas(
         DialogoGerenciadorDeDados(
             pastaDownloads = pastaDownloads,
             onDismiss = { exibirDialogoDados = false }
+        )
+    }
+
+    if (exibirDialogoPasta) {
+        var textoInput by remember { mutableStateOf(idPastaAtual) }
+
+        AlertDialog(
+            onDismissRequest = { exibirDialogoPasta = false },
+            containerColor = Color(0xFF1F2833),
+            title = {
+                Text("Pasta do Google Drive", color = Color.White, fontWeight = FontWeight.Bold)
+            },
+            text = {
+                Column {
+                    Text(
+                        "Cole o Link ou ID da pasta do Google Drive onde estão suas subpastas de jogos:",
+                        color = Color(0xFF94A3B8),
+                        fontSize = 13.sp
+                    )
+                    Spacer(modifier = Modifier.height(12.dp))
+                    OutlinedTextField(
+                        value = textoInput,
+                        onValueChange = { textoInput = it },
+                        placeholder = { Text("ID ou link da pasta...", color = Color(0xFF64748B)) },
+                        singleLine = true,
+                        colors = OutlinedTextFieldDefaults.colors(
+                            focusedTextColor = Color.White,
+                            unfocusedTextColor = Color.White,
+                            focusedBorderColor = Color(0xFF00E5FF),
+                            unfocusedBorderColor = Color(0xFF475569)
+                        ),
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Text(
+                        "Dica: Certifique-se de compartilhar a pasta no Drive com o e-mail da Conta de Serviço:\nportzone@port-zone.iam.gserviceaccount.com",
+                        color = Color(0xFF00E5FF),
+                        fontSize = 11.sp
+                    )
+                }
+            },
+            confirmButton = {
+                Button(
+                    onClick = {
+                        onSalvarIdPasta(textoInput)
+                        exibirDialogoPasta = false
+                    },
+                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF00E5FF))
+                ) {
+                    Text("Salvar e Carregar", color = Color(0xFF0B0C10), fontWeight = FontWeight.Bold)
+                }
+            },
+            dismissButton = {
+                TextButton(
+                    onClick = {
+                        textoInput = GoogleDriveService.ID_PASTA_PADRAO
+                        onSalvarIdPasta(GoogleDriveService.ID_PASTA_PADRAO)
+                        exibirDialogoPasta = false
+                    }
+                ) {
+                    Text("Restaurar Padrão", color = Color(0xFF94A3B8))
+                }
+            }
         )
     }
 }
