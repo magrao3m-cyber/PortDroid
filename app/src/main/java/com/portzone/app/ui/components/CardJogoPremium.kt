@@ -7,7 +7,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.SportsEsports
+import androidx.compose.material.icons.filled.Gamepad
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -16,13 +16,11 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import coil.request.ImageRequest
 import com.portzone.app.data.model.JogoPort
 import com.portzone.app.data.model.StatusJogo
 import com.portzone.app.data.service.CoverArtResolver
@@ -60,10 +58,7 @@ fun CardJogoPremium(
             // Tenta carregar a imagem de capa (seja do Drive ou resolvida pelo CoverArtResolver)
             if (!jogo.urlCapa.isNullOrBlank() && !falhaNoCarregamento) {
                 AsyncImage(
-                    model = ImageRequest.Builder(LocalContext.current)
-                        .data(jogo.urlCapa)
-                        .crossfade(true)
-                        .build(),
+                    model = jogo.urlCapa,
                     contentDescription = "Capa de ${jogo.nome}",
                     modifier = Modifier
                         .fillMaxSize()
@@ -81,7 +76,7 @@ fun CardJogoPremium(
                     modifier = Modifier.padding(4.dp)
                 ) {
                     Icon(
-                        imageVector = Icons.Default.SportsEsports,
+                        imageVector = Icons.Default.Gamepad,
                         contentDescription = null,
                         tint = Color(0xFF00E5FF).copy(alpha = 0.8f),
                         modifier = Modifier.size(24.dp)

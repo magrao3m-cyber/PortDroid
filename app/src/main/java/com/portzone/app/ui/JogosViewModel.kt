@@ -24,7 +24,7 @@ import java.io.File
 
 class JogosViewModel(
     application: Application,
-    private val driveService: GoogleDriveService,
+    private val driveService: GoogleDriveService?,
     val pastaDownloads: File
 ) : AndroidViewModel(application) {
 
@@ -138,11 +138,17 @@ class JogosViewModel(
     }
 
     fun carregarListaDeJogos() {
+        val drive = driveService
+        if (drive == null) {
+            uiState = TelaJogosUiState.Erro("Google Drive não configurado. Verifique o arquivo de credenciais da Conta de Serviço.")
+            return
+        }
+
         viewModelScope.launch {
             uiState = TelaJogosUiState.Carregando
             try {
                 val idPasta = obterIdPastaConfigurada()
-                val listaDrive = driveService.listarJogosComCategoriasECapas(idPasta)
+                val listaDrive = drive.listarJogosComCategoriasECapas(idPasta)
 
                 val agora = System.currentTimeMillis()
                 val trintaDias = 30L * 24 * 60 * 60 * 1000
@@ -205,13 +211,14 @@ class JogosViewModel(
      * Funciona em pastas privadas de Contas de Serviço sem redirecionar para tela de login do Google.
      */
     fun iniciarDownloadAutenticado(context: Context = getApplication(), jogo: JogoPort) {
+        val drive = driveService ?: return
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 withContext(Dispatchers.Main) {
                     atualizarStatusJogo(jogo.id, StatusJogo.BAIXANDO)
                 }
                 val arquivoDestino = File(pastaDownloads, jogo.nome)
-                driveService.baixarJogo(jogo.id, arquivoDestino.absolutePath)
+                drive.baixarJogo(jogo.id, arquivoDestino.absolutePath)
 
                 withContext(Dispatchers.Main) {
                     atualizarStatusJogo(jogo.id, StatusJogo.PRONTO_PARA_INSTALAR)
@@ -229,10 +236,19 @@ class JogosViewModel(
     }
 
     private fun abrirLinkProjetoOuArquivo(context: Context, jogo: JogoPort) {
+        val drive = driveService
+        if (drive == null) {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://drive.google.com/open?id=${jogo.id}")).apply {
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            }
+            context.startActivity(intent)
+            return
+        }
+
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 val tempFile = File(context.cacheDir, "temp_${jogo.id}.url")
-                driveService.baixarJogo(jogo.id, tempFile.absolutePath)
+                drive.baixarJogo(jogo.id, tempFile.absolutePath)
                 val content = tempFile.readText()
                 tempFile.delete()
 
@@ -300,7 +316,15 @@ class JogosViewModel(
             return object : ViewModelProvider.Factory {
                 @Suppress("UNCHECKED_CAST")
                 override fun <T : ViewModel> create(modelClass: Class<T>): T {
-                    val driveService = GoogleDriveService.criarAPartirDeCredenciaisSeguras(application)
+                    val driveService = try {
+                        GoogleDriveService.criarAPartirDeCredenciaisSeguras(application)
+                    } catch (e1: Exception) {
+                        try {
+                            GoogleDriveService.criarAPartirDeAssets(application)
+                        } catch (e2: Exception) {
+                            null
+                        }
+                    }
                     val pastaDownloads = application.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)
                         ?: Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
                     return JogosViewModel(application, driveService, pastaDownloads) as T

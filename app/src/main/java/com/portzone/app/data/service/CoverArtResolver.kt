@@ -114,7 +114,27 @@ object CoverArtResolver {
         "thief" to "211600",
         "tomb raider" to "224960",
         "alien vs predator" to "10680",
-        "silent hill" to "2124490"
+        "silent hill" to "2124490",
+        "brotato" to "1942280",
+        "crosscode" to "368340",
+        "amnesia" to "57300",
+        "hotline miami" to "219150",
+        "baldur's gate" to "228280",
+        "fallout new vegas" to "22380",
+        "vampire survivors" to "1794680",
+        "terraria" to "105600",
+        "slime rancher" to "433340",
+        "the binding of isaac" to "250900",
+        "binding of isaac" to "250900",
+        "isaac" to "250900",
+        "postal 2" to "223470",
+        "postal" to "223470",
+        "psychonauts" to "3830",
+        "risk of rain" to "248820",
+        "persona 4" to "1113000",
+        "titan quest" to "475150",
+        "hitman" to "6850",
+        "resident evil 5" to "21690"
     )
 
     /**
@@ -185,8 +205,10 @@ object CoverArtResolver {
     fun normalizarNome(nomeBruto: String): String {
         return nomeBruto
             .replace(Regex("(?i)\\.apk|\\.zip|\\.7z|\\.z64|\\.url|\\.txt"), "")
-            .replace(Regex("\\s*\\(\\d+\\)$"), "")
+            .replace(Regex("\\[.*?\\]"), "")
             .replace(Regex("(?i)\\s*\\(link\\s*/\\s*instruções\\)"), "")
+            .replace(Regex("\\s*\\(v?\\d+.*?\\)"), "")
+            .replace(Regex("\\s*\\(\\d+\\)$"), "")
             .replace("_", " ")
             .split(" - ")[0]
             .trim()

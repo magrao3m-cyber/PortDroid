@@ -19,7 +19,11 @@ object GerenciadorCredenciaisSeguras {
 
     // Gera ou recupera uma chave mestra guardada no chip de segurança (Keystore) do celular
     private fun obterChaveMestra(): String {
-        return MasterKeys.getOrCreate(MasterKeys.AES256_GCM_SPEC)
+        return try {
+            MasterKeys.getOrCreate(MasterKeys.AES256_GCM_SPEC)
+        } catch (_: Exception) {
+            "portzone_master_key"
+        }
     }
 
     /**
@@ -31,24 +35,28 @@ object GerenciadorCredenciaisSeguras {
         jsonTextoPuro: String,
         nomeArquivoDestino: String = NOME_ARQUIVO_PADRAO
     ) {
-        val arquivoDestino = File(context.filesDir, nomeArquivoDestino)
+        try {
+            val arquivoDestino = File(context.filesDir, nomeArquivoDestino)
 
-        // Se já existir, deleta para sobrescrever com segurança
-        if (arquivoDestino.exists()) {
-            arquivoDestino.delete()
+            // Se já existir, deleta para sobrescrever com segurança
+            if (arquivoDestino.exists()) {
+                arquivoDestino.delete()
+            }
+
+            val encryptedFile = EncryptedFile.Builder(
+                arquivoDestino,
+                context,
+                obterChaveMestra(),
+                EncryptedFile.FileEncryptionScheme.AES256_GCM_HKDF_4KB
+            ).build()
+
+            val outputStream: OutputStream = encryptedFile.openFileOutput()
+            outputStream.write(jsonTextoPuro.toByteArray(Charsets.UTF_8))
+            outputStream.flush()
+            outputStream.close()
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
-
-        val encryptedFile = EncryptedFile.Builder(
-            arquivoDestino,
-            context,
-            obterChaveMestra(),
-            EncryptedFile.FileEncryptionScheme.AES256_GCM_HKDF_4KB
-        ).build()
-
-        val outputStream: OutputStream = encryptedFile.openFileOutput()
-        outputStream.write(jsonTextoPuro.toByteArray(Charsets.UTF_8))
-        outputStream.flush()
-        outputStream.close()
     }
 
     /**
@@ -79,15 +87,5 @@ object GerenciadorCredenciaisSeguras {
             e.printStackTrace()
             ""
         }
-    }
-
-    /**
-     * Verifica se o arquivo seguro criptografado já existe no diretório privado do aplicativo.
-     */
-    fun existeCredencialCriptografada(
-        context: Context,
-        nomeArquivo: String = NOME_ARQUIVO_PADRAO
-    ): Boolean {
-        return File(context.filesDir, nomeArquivo).exists()
     }
 }

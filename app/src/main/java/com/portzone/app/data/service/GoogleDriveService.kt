@@ -116,7 +116,11 @@ class GoogleDriveService(private val driveService: Drive) {
                         val imagemCorrespondente = imagens.find {
                             it.name.substringBeforeLast(".").equals(nomeSemExtensao, ignoreCase = true)
                         }
-                        val urlCapa = imagemCorrespondente?.thumbnailLink
+                        val urlImagemDrive = imagemCorrespondente?.let { img ->
+                            img.thumbnailLink?.replace(Regex("=s\\d+$"), "=s400")
+                                ?: "https://drive.google.com/uc?export=view&id=${img.id}"
+                        }
+                        val urlCapa = urlImagemDrive
                             ?: CoverArtResolver.obterUrlCapa(nomeLimpo)
                             ?: CoverArtResolver.obterUrlCapa(apk.name)
                             ?: apk.thumbnailLink
@@ -147,7 +151,10 @@ class GoogleDriveService(private val driveService: Drive) {
                                 tamanho = primeiro.getSize(),
                                 dataModificacaoDrive = primeiro.modifiedTime?.value ?: 0L,
                                 categoria = categoria,
-                                urlCapa = imagens.firstOrNull()?.thumbnailLink ?: CoverArtResolver.obterUrlCapa(nomeLimpo),
+                                urlCapa = imagens.firstOrNull()?.let { img ->
+                                    img.thumbnailLink?.replace(Regex("=s\\d+$"), "=s400")
+                                        ?: "https://drive.google.com/uc?export=view&id=${img.id}"
+                                } ?: CoverArtResolver.obterUrlCapa(nomeLimpo),
                                 mimeType = primeiro.mimeType
                             )
                         )
@@ -269,32 +276,40 @@ class GoogleDriveService(private val driveService: Drive) {
             context: Context,
             nomeArquivoCriptografado: String = GerenciadorCredenciaisSeguras.NOME_ARQUIVO_PADRAO
         ): GoogleDriveService {
-            var jsonCredenciais = GerenciadorCredenciaisSeguras.lerCredenciaisCriptografadas(
-                context,
-                nomeArquivoCriptografado
-            )
+            var jsonCredenciais = try {
+                GerenciadorCredenciaisSeguras.lerCredenciaisCriptografadas(
+                    context,
+                    nomeArquivoCriptografado
+                )
+            } catch (_: Exception) {
+                ""
+            }
 
-            // Se o arquivo criptografado ainda não existe, verifica se há credentials.json em assets para migração inicial
+            // Se o arquivo criptografado ainda não existe ou falhou na leitura, recorre ao credentials.json em assets
             if (jsonCredenciais.isBlank()) {
                 try {
                     val streamAssets = context.assets.open("credentials.json")
                     val jsonBruto = streamAssets.bufferedReader().use { it.readText() }
                     if (jsonBruto.isNotBlank()) {
-                        // Criptografa imediatamente com chave do chip Keystore do aparelho
-                        GerenciadorCredenciaisSeguras.salvarCredenciaisCriptografadas(
-                            context,
-                            jsonBruto,
-                            nomeArquivoCriptografado
-                        )
                         jsonCredenciais = jsonBruto
+                        // Tenta salvar criptografado no Keystore em segundo plano
+                        try {
+                            GerenciadorCredenciaisSeguras.salvarCredenciaisCriptografadas(
+                                context,
+                                jsonBruto,
+                                nomeArquivoCriptografado
+                            )
+                        } catch (eCrypto: Exception) {
+                            eCrypto.printStackTrace()
+                        }
                     }
                 } catch (_: Exception) {
-                    // Esperado em builds de produção onde o arquivo de texto puro foi removido de assets
+                    // Esperado se credentials.json não estiver em assets
                 }
             }
 
             if (jsonCredenciais.isBlank()) {
-                throw IllegalStateException("Nenhuma credencial segura encontrada. Certifique-se de configurar o arquivo $nomeArquivoCriptografado.")
+                throw IllegalStateException("Nenhuma credencial do Google Drive encontrada em assets ou no Keystore.")
             }
 
             // Alimenta a biblioteca do Google Drive diretamente com o fluxo de memória seguro (RAM)
@@ -317,23 +332,19 @@ class GoogleDriveService(private val driveService: Drive) {
             context: Context,
             nomeAsset: String = "credentials.json"
         ): GoogleDriveService {
-            return try {
-                criarAPartirDeCredenciaisSeguras(context)
-            } catch (_: Exception) {
-                val inputStream: InputStream = context.assets.open(nomeAsset)
-                val credentials = GoogleCredentials.fromStream(inputStream)
-                    .createScoped(Collections.singletonList(DriveScopes.DRIVE_READONLY))
+            val inputStream: InputStream = context.assets.open(nomeAsset)
+            val credentials = GoogleCredentials.fromStream(inputStream)
+                .createScoped(Collections.singletonList(DriveScopes.DRIVE_READONLY))
 
-                val httpTransport = GoogleNetHttpTransport.newTrustedTransport()
-                val jsonFactory = GsonFactory.getDefaultInstance()
-                val requestInitializer = HttpCredentialsAdapter(credentials)
+            val httpTransport = GoogleNetHttpTransport.newTrustedTransport()
+            val jsonFactory = GsonFactory.getDefaultInstance()
+            val requestInitializer = HttpCredentialsAdapter(credentials)
 
-                val drive = Drive.Builder(httpTransport, jsonFactory, requestInitializer)
-                    .setApplicationName("PortZone Android")
-                    .build()
+            val drive = Drive.Builder(httpTransport, jsonFactory, requestInitializer)
+                .setApplicationName("PortZone Android")
+                .build()
 
-                GoogleDriveService(drive)
-            }
+            return GoogleDriveService(drive)
         }
     }
 }
