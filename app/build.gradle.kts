@@ -21,9 +21,22 @@ android {
         }
     }
 
+    signingConfigs {
+        create("release") {
+            val keystoreFile = rootProject.file("portdroid-release.jks")
+            if (keystoreFile.exists()) {
+                storeFile = keystoreFile
+                storePassword = "portdroidkey123"
+                keyAlias = "portdroid"
+                keyPassword = "portdroidkey123"
+            }
+        }
+    }
+
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            signingConfig = signingConfigs.getByName("release")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"

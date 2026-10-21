@@ -16,3 +16,5 @@
 # Credenciais sensíveis (GCP Service Account)
 app/src/main/assets/credentials.json
 *.enc
+*.jks
+*.keystore
