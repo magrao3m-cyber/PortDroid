@@ -6,21 +6,26 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.SportsEsports
 import androidx.compose.material3.*
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
+import coil.request.ImageRequest
 import com.portzone.app.data.model.JogoPort
 import com.portzone.app.data.model.StatusJogo
+import com.portzone.app.data.service.CoverArtResolver
 
 @Composable
 fun CardJogoPremium(
@@ -37,17 +42,61 @@ fun CardJogoPremium(
             .padding(12.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        // Thumbnail com cantos arredondados e borda sutil de profundidade
-        Box {
-            AsyncImage(
-                model = jogo.urlCapa ?: "https://placehold.co/150x150/1F2833/00E5FF?text=${jogo.nome.take(2)}",
-                contentDescription = "Capa de ${jogo.nome}",
-                modifier = Modifier
-                    .size(76.dp)
-                    .clip(RoundedCornerShape(12.dp))
-                    .border(1.dp, Color(0xFF94A3B8).copy(alpha = 0.2f), RoundedCornerShape(12.dp)),
-                contentScale = ContentScale.Crop
-            )
+        // Thumbnail com cantos arredondados, gradiente e suporte a fallback dinâmico
+        var falhaNoCarregamento by remember(jogo.id, jogo.urlCapa) { mutableStateOf(false) }
+
+        Box(
+            modifier = Modifier
+                .size(76.dp)
+                .clip(RoundedCornerShape(12.dp))
+                .background(
+                    brush = Brush.linearGradient(
+                        colors = listOf(Color(0xFF161E28), Color(0xFF0F141C))
+                    )
+                )
+                .border(1.dp, Color(0xFF00E5FF).copy(alpha = 0.25f), RoundedCornerShape(12.dp)),
+            contentAlignment = Alignment.Center
+        ) {
+            // Tenta carregar a imagem de capa (seja do Drive ou resolvida pelo CoverArtResolver)
+            if (!jogo.urlCapa.isNullOrBlank() && !falhaNoCarregamento) {
+                AsyncImage(
+                    model = ImageRequest.Builder(LocalContext.current)
+                        .data(jogo.urlCapa)
+                        .crossfade(true)
+                        .build(),
+                    contentDescription = "Capa de ${jogo.nome}",
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .clip(RoundedCornerShape(12.dp)),
+                    contentScale = ContentScale.Crop,
+                    onError = { falhaNoCarregamento = true }
+                )
+            }
+
+            // Fallback Gamer Estilizado: Badge Cyber com ícone e iniciais do jogo
+            if (jogo.urlCapa.isNullOrBlank() || falhaNoCarregamento) {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center,
+                    modifier = Modifier.padding(4.dp)
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.SportsEsports,
+                        contentDescription = null,
+                        tint = Color(0xFF00E5FF).copy(alpha = 0.8f),
+                        modifier = Modifier.size(24.dp)
+                    )
+                    Spacer(modifier = Modifier.height(2.dp))
+                    val iniciais = CoverArtResolver.extrairIniciais(jogo.nome)
+                    Text(
+                        text = iniciais,
+                        color = Color.White,
+                        fontSize = 10.sp,
+                        fontWeight = FontWeight.ExtraBold,
+                        maxLines = 1
+                    )
+                }
+            }
 
             // Selo visual de jogo NOVO se detectado na varredura
             if (jogo.isNovo) {
@@ -76,8 +125,9 @@ fun CardJogoPremium(
         Column(
             modifier = Modifier.weight(1f)
         ) {
+            val tituloExibicao = CoverArtResolver.normalizarNome(jogo.nome)
             Text(
-                text = jogo.nome.substringBeforeLast("."), // Remove a extensão técnica visualmente
+                text = tituloExibicao,
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold,
                 color = Color.White,
@@ -88,8 +138,14 @@ fun CardJogoPremium(
             Spacer(modifier = Modifier.height(4.dp))
 
             val tamanhoMB = (jogo.tamanho ?: 0L) / (1024 * 1024)
+            val subTexto = if (tamanhoMB > 0) {
+                "$tamanhoMB MB • ${jogo.categoria}"
+            } else {
+                jogo.categoria
+            }
+
             Text(
-                text = if (tamanhoMB > 0) "$tamanhoMB MB" else "Tamanho sob consulta",
+                text = subTexto,
                 style = MaterialTheme.typography.bodySmall,
                 color = Color(0xFF94A3B8)
             )
@@ -113,7 +169,6 @@ fun CardJogoPremium(
             contentAlignment = Alignment.Center
         ) {
             if (jogo.statusLocal == StatusJogo.BAIXANDO) {
-                // Loader Circular Minimalista centralizado na área de ação
                 CircularProgressIndicator(
                     modifier = Modifier.size(24.dp),
                     color = Color(0xFF00E5FF),
@@ -147,7 +202,7 @@ fun CardJogoPremium(
                 ) {
                     Text(
                         text = when (jogo.statusLocal) {
-                            StatusJogo.DISPONIVEL_DRIVE -> "OBTER"
+                            StatusJogo.DISPONIVEL_DRIVE -> if (jogo.nome.contains("(Link")) "ABRIR" else "OBTER"
                             StatusJogo.PRONTO_PARA_INSTALAR -> "INSTALAR"
                             StatusJogo.ATUALIZACAO_DISPONIVEL -> "ATUALIZAR"
                             else -> "OBTER"

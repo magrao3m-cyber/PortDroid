@@ -24,5 +24,7 @@
 -keep class com.google.api.client.json.gson.** { *; }
 -keep class com.google.gson.** { *; }
 
-# App Models
+# App Models & Services
 -keep class com.portzone.app.data.model.** { *; }
+-keep class com.portzone.app.data.service.** { *; }
+-keep class com.portzone.app.data.repository.** { *; }

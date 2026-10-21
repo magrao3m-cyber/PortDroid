@@ -116,7 +116,10 @@ class GoogleDriveService(private val driveService: Drive) {
                         val imagemCorrespondente = imagens.find {
                             it.name.substringBeforeLast(".").equals(nomeSemExtensao, ignoreCase = true)
                         }
-                        val urlCapa = imagemCorrespondente?.thumbnailLink ?: apk.thumbnailLink
+                        val urlCapa = imagemCorrespondente?.thumbnailLink
+                            ?: CoverArtResolver.obterUrlCapa(nomeLimpo)
+                            ?: CoverArtResolver.obterUrlCapa(apk.name)
+                            ?: apk.thumbnailLink
 
                         todosOsJogos.add(
                             JogoPort(
@@ -144,7 +147,7 @@ class GoogleDriveService(private val driveService: Drive) {
                                 tamanho = primeiro.getSize(),
                                 dataModificacaoDrive = primeiro.modifiedTime?.value ?: 0L,
                                 categoria = categoria,
-                                urlCapa = imagens.firstOrNull()?.thumbnailLink,
+                                urlCapa = imagens.firstOrNull()?.thumbnailLink ?: CoverArtResolver.obterUrlCapa(nomeLimpo),
                                 mimeType = primeiro.mimeType
                             )
                         )
@@ -164,7 +167,7 @@ class GoogleDriveService(private val driveService: Drive) {
                             tamanho = apk.getSize(),
                             dataModificacaoDrive = apk.modifiedTime?.value ?: 0L,
                             categoria = "Geral",
-                            urlCapa = apk.thumbnailLink,
+                            urlCapa = CoverArtResolver.obterUrlCapa(apk.name) ?: apk.thumbnailLink,
                             mimeType = apk.mimeType
                         )
                     )
