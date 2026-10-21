@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PortZone</string>
+    <string name="title_games">Catálogo de Jogos</string>
+    <string name="btn_download">Baixar Jogo</string>
+    <string name="downloading">Baixando…</string>
+    <string name="download_completed">Download concluído!</string>
+    <string name="download_failed">Falha no download</string>
+    <string name="empty_games">Nenhum jogo encontrado na pasta informada.</string>
+    <string name="error_credentials_missing">Arquivo credentials.json não encontrado em assets/.</string>
+</resources>

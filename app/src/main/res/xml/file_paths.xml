@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Garante compatibilidade de compartilhamento com o diretório público de Downloads do sistema -->
+    <external-path name="downloads_publicos" path="." />
+    <!-- Garante acesso a arquivos salvos na pasta externa exclusiva do app -->
+    <external-files-path name="downloads_app" path="." />
+    <!-- Armazenamento interno privado -->
+    <files-path name="internal_files" path="." />
+</paths>

@@ -1,0 +1,18 @@
+*.iml
+.gradle
+/local.properties
+/.idea/
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+*.apk
+*.aab
+*.ap_
+*.dex
+/app/build
+
+# Credenciais sensíveis (GCP Service Account)
+app/src/main/assets/credentials.json
+*.enc

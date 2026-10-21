@@ -1,0 +1,516 @@
+GAME,PROJECT,URL,NEEDS GAME FILES?
+Alpha Touch ,Alpha Touch ,http://opentouchgaming.com/alpha-touch/,YES
+Psi Touch,Psi Touch,http://opentouchgaming.com/psi-touch/,YES
+Sigma Touch,Sigma Touch ,http://opentouchgaming.com/sigma-touch/,YES
+Zeta Touch ,Zeta Touch,http://opentouchgaming.com/zeta-touch/,YES
+Delta Touch ,Delta Touch,https://play.google.com/store/apps/details?id=com.opentouchgaming.deltatouch,YES
+Quad Touch,Quad Touch ,https://play.google.com/store/apps/details?id=com.opentouchgaming.quadtouch,YES
+Source Engine Port,Source Engine Port,https://discord.com/invite/source-engine-4-android-672055862608658432,YES
+,,,
+Classic Core Engines,Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,YES
+IdTech4A++,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,YES
+OpenBoR,OpenBoR,https://github.com/DCurrent/openbor,YES
+Rotating Art Launcher ,Rotating Art Launcher ,https://github.com/FireworkSky/RotatingartLauncher,YES
+Xash3D FWGS,Xash3D FWGS ,https://github.com/fwgs/xash3d-fwgs,YES
+,,,
+,,,
+Super Mario Bros.,Super Mario Bros. Remastered,https://github.com/mircey/super-mario-bros.-remastered-android/releases,Super Mario Bros. (World).nes
+Zelda II: The Adventure of Link,Zelda II 2P Splitscreen — Android,https://github.com/doctormajid7-ux/z2rs-android-2p-splitscreen/tree/main,Need Rom
+,,,
+,,,
+Dragon Ball Z: Super Saiya Densetsu,Dragon Ball Z: Super Saiya Densetsu SNES Decomp,https://github.com/JackRushante/DBZ-Super-Saiya-Densetsu-Rust,Need Rom
+International Superstar Soccer Deluxe ,issd Native ,https://github.com/sergiomanzur/issd-native,International Superstar Soccer Deluxe (USA) sfc
+The Legend of Zelda: A Link to the Past,Zelda3Launcher,https://github.com/Waterdish/zelda3-android,zelda3_assets.dat
+The Legend of Zelda: A Link to the Past,Zelda3Launcher (Dual Screen),https://github.com/samyost1/zelda3-android/releases,"Legend of Zelda, The - A Link to the Past (USA).sfc"
+The Legend of Zelda: A Link to the Past,Moon Pearl,https://github.com/DoutorRaposo/moonpearl,"Legend of Zelda, The - A Link to the Past (USA).sfc"
+Star Fox,Star Fox Enhanced,https://github.com/kandowontu/starfox-enhanced,Star Fox 64 (USA).z64
+Super Metroid,Super Metroid (Dual Screen),https://github.com/Raekwon1603/super_metroid-android,"Super Metroid (Japan, USA) (En, Ja).sfc"
+Zombies Ate My Neighbors,Undead Neighbor Eaters — Android Native Port,https://github.com/sirdankz/Undead-Neighbor-Eaters-Droid,Need Rom
+,,,
+Diddy Kong Racing,Diddy Kong Racing Native ,https://www.reddit.com/r/AndroidNativePorts/s/qxG9s19kLR,"Diddy Kong Racing (USA) (En,Fr) (Rev 1).z64"
+Perfect Dark,Source Engine Port,http://opentouchgaming.com/alpha-touch/,Perfect Dark (USA) (Rev 1).z64
+,,,
+Aerogauge,Aerogauge Recomp ,https://github.com/alondero/aerogauge-recomp,AeroGauge (USA).z64.
+Automobili Lamborghini ,Automobili Lamborghini Recomp,https://github.com/alondero/automobililamborghini-recomp,Automobili Lamborghini (USA).z64
+Banjo-Kazooie,Banjo Recomp (Dual Screen),https://github.com/AurelioB/BanjoRecomp-Android/releases,Banjo-Kazooie (USA) 1.0.z64
+Banjo-Kazooie,Lighthouse,https://github.com/izzy2lost/Lighthouse/releases/tag/1.0.2,Banjo-Kazooie (USA) (Rev 1).z64
+Battlezone: Rise of the Black Dogs ,bzrecomp,https://github.com/wootbeer/bzrecomp,Need Rom
+Bomberman Hero,BMHero Recompiled,https://github.com/WINDROID-EMU/Bomber-Man-Hero,Bomberman Hero (USA).Z64
+Castlevania: Legacy of Darkness,LOD Recomp,https://github.com/sergiomanzur/cvlod_recomp/releases/,Castlevania Legacy of Darkness (USA).z64
+Conker's Bad Fur Day,CBFD Recompiled Android Evolved,https://github.com/codepdbh/CBFD-Recompiled-Android-Evolved,Need Rom
+Doraemon: Nobita to Mittsu no Seireiseki ,Dora64,https://github.com/citrongames/Dora64,Need JP Rom
+Doraemon 3: Nobita no Machi SOS!,Dora64-3,https://github.com/citrongames/Dora64-3,Need Rom
+Donkey Kong 64,DK64 Recompiled ,https://github.com/deivid22srk/dk64-recomp-android/releases/,Donkey Kong 64 (USA).Z64
+GoldenEye 007,Golden Eye Omniport,https://github.com/Gilleece/goldeneye-omniport,https://vimm.net/vault/2609
+Harvest Moon 64,HM64 Android (Dual Screen),https://github.com/igawa6/HarvestMoon64Recomp,Harvest Moon 64 (USA).z64
+Hybrid Heaven,Hybrid Heaven Recompiled ,https://github.com/ogdanimal/HybridHeaven-Recomp,Need USA Rom
+Mario Kart 64,SpaghettiKart,https://github.com/izzy2lost/SpaghettiKart/releases,Mario Kart 64 (USA).z64
+Mega Man 64,Megaman 64 Recomp Mobile,https://github.com/DevZer0D4Y/MegaMan64Recompiled-Mobile,Need Rom
+Mystical Ninja Starring Goemon,Goemon64recomp,https://github.com/ogdanimal/Goemon64Recomp-Android/releases,Mystical Ninja Starring Goemon (USA).z64
+Paper Mario,PaperBoat,https://github.com/chris43123/PaperBoat,Need Rom
+Perfect Dark,N64 Decomp,https://github.com/izzy2lost/perfect_dark,Perfect Dark (USA) (Rev 1).z64
+Perfect Dark,Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,Perfect Dark (USA) (Rev 1).z64
+Pilotwings 64,Birdman64,https://github.com/NoahVl/Birdman64,Need Rom
+Star Fox 64,Starship,https://github.com/izzy2lost/Starship,Star Fox 64 (USA) (Rev 1).z64
+Super Mario 64,SM64coopdx,https://github.com/ManIsCat2/sm64coopdx/releases,Super Mario 64 (USA).z64
+Super Mario 64,Ghostship ,https://github.com/HarbourMasters/Ghostship/releases/tag/3.0.0,Super Mario 64 (USA).z64
+Super Mario 64,Ghostship,https://github.com/izzy2lost/Ghostship,Ghostship folder
+Super Smash Bros.,Battleship ,https://github.com/JRickey/BattleShip,Super Smash Bros. (USA).z64
+The Legend of Zelda: Ocarina of Time,Shipwright Android (Outdated),https://github.com/Waterdish/Shipwright-Android/releases,ZELOOTD.z64 (Debug Build)
+The Legend of Zelda: Ocarina of Time,Shipwright Android (4 Variants),https://github.com/linkzenic/Shipwright-Android,ZELOOTD.z64 (Debug Build)
+The Legend of Zelda: Ocarina of Time,Shipwright Android,https://github.com/please-be-nice/Shipwright-android,ZELOOTD.z64 (Debug Build)
+The Legend of Zelda: Majora's Mask,2 Ship 2 Harkinian (Outdated),https://github.com/Waterdish/2ship2harkinian-Android,"Legend of Zelda, The - Majora's Mask (USA).z64"
+The Legend of Zelda: Majora's Mask,2 Ship 2 Harkinian ,https://github.com/linkzenic/2ship2harkinian-Android,"Legend of Zelda, The - Majora's Mask (USA).z64"
+The Legend of Zelda: Majora's Mask,2 Ship 2 Harkinian (2s2h),https://github.com/Jameriquiah/2ship2harkinian,"Legend of Zelda, The - Majora's Mask (USA).z64"
+The Legend of Zelda: Majora's Mask,zelda64recomp,https://github.com/linkzenic/Zelda64Recomp-Android,"Legend of Zelda, The - Majora's Mask (USA).z64"
+Wave Race 64,Wave Racer 64 recomp for android,https://github.com/HLLArtyParty/WaveRace64RecompForAndroid,Wave Race 64 - Kawasaki Jet Ski (USA) (Rev 1) Z64
+Yoshi's Story,DinoTale: Yoshi's Story Recompiled,https://github.com/wootbeer/dinotale,Need Rom 
+,,,
+Animal Crossing,Animal Crossing Android Port ,https://www.reddit.com/r/AndroidNativePorts/comments/1v5dbdd/animal_crossing_android_port/,Animal Crossing (USA).nkit.iso
+Resident Evil 4,Nightjar,https://discord.gg/sNrK9trf8g,Need Rom 
+Super Mario Sunshine,Sunpad,https://www.reddit.com/r/AndroidNativePorts/comments/1wje0md/sunpad_super_mario_sunshine_android_port,Super Mario Sunshine (USA).iso
+,,,
+Animal Crossing,Animal Crossing (GameCube) Android Port,https://github.com/zwaetschge/ACGC-Android-Port,Animal Crossing (USA).nkit.iso
+Mario Party 4,PartyBoard,https://github.com/mariopartyrd/partyboard,Mario Party 4 (USA) (Rev 1).iso
+Mario Party 4,PartyBoard,https://github.com/zeranemesis/Marioparty4,Mario Party 4 (USA) (Rev 1).iso
+Metroid Prime,Metroid Prime Native Port,https://github.com/Odrannnn/MetroidPrimePort,Need Rom
+Pikmin,Open Nectar Native Mobile Port,https://github.com/SSunnKing/Open-Nectar---Pikmin-Native-PC-Mobile-Port,pikmin.iso
+Resident Evil 4,CubeEvil 4,https://github.com/Andiweli/CubeEvil4-Android,
+Super Mario Strikers,Strikers Android,https://github.com/luisxl15/Strikers-Android-Port,Super Mario Strikers (USA).ciso
+Super Smash Bros. Melee,melee-pc,https://github.com/999sian/melee-pc,"Super Smash Bros. Melee (USA) (En,Ja) (Rev 2).iso"
+The Legend of Zelda: Twilight Princess,Dusklight,https://github.com/TwilitRealm/dusklight,"Legend of Zelda, The - Twilight Princess (Europe).rvz"
+,,,
+Mario Kart Wii,KartPad,https://github.com/chrissotraidis/kartpad/releases#release-v0.4.10-android.1,Mario Kart Wii (Europe) ISO or wbfs
+Mario Kart Wii,Driftdroid,https://github.com/dorPXP/driftdroid/releases,Mario Kart Wii (Europe) ISO or wbfs
+Super Mario Galaxy,Galaxy Android,https://github.com/OpenPort-Labs/Galaxy-Android,Need Rom
+,,,
+The Legend of Zelda: The Wind Waker,TLoZ:TWW HD Recompiled — Android,https://github.com/GreenNaugahyde/ZeldaWWHDRecompAndroid,Need Wii U Rom
+The Legend of Zelda: The Wind Waker,TLoZ:TWW HD Recompiled Enhaced,https://github.com/SSunnKing/ZeldaWWHDRecompAndroid---ENHANCED,Need Wii U Rom
+,,,
+,,,
+Metroid 2: Return of Samus,Another Metroid 2 Remake Autopatcher (Dual Screen),https://github.com/am2r-android/AM2R-Autopatcher-Android,win_11.zip
+Pokémon Red,Gen1recomp ,https://github.com/bryanthaboi/gen1recomp/releases,"Pokemon - Red Version (USA, Europe)"
+Pokémon Red,Gen2recomp,https://github.com/UNDERdecoded/Gen2Recomped/releases,"Pokemon - Red Version (USA, Europe)"
+Pokémon Blue,Gen1recomp ,https://github.com/bryanthaboi/gen1recomp/releases,"Pokemon - Blue Version (USA, Europe)"
+Pokémon Blue,Gen2recomp,https://github.com/UNDERdecoded/Gen2Recomped/releases,"Pokemon - Blue Version (USA, Europe)"
+,,,
+The Legend of Zelda: Link's Awakening DX,LADX HD Updated,https://archive.org/download/ladxhd_archive/Builds/,"No, Only Needs Version 1.0 to Build Apk"
+,,,
+Pokémon Yellow,Gen1recomp ,https://github.com/bryanthaboi/gen1recomp/releases,"Pokemon - Yellow Version - Special Pikachu Edition (USA, Europe)"
+Pokémon Yellow,Gen2recomp,https://github.com/UNDERdecoded/Gen2Recomped/releases,"Pokemon - Yellow Version - Special Pikachu Edition (USA, Europe)"
+Pokemon Gold,Gen1recomp ,https://github.com/bryanthaboi/gen1recomp/releases,"Pokemon - Gold Version (USA, Europe) (SGB Enhanced)"
+Pokemon Gold,Gen2recomp,https://github.com/UNDERdecoded/Gen2Recomped/releases,"Pokemon - Gold Version (USA, Europe) (SGB Enhanced)"
+Pokemon Silver,Gen1recomp ,https://github.com/bryanthaboi/gen1recomp/releases,"Pokemon - Silver Version (USA, Europe) (SGB Enhanced)"
+Pokemon Silver,Gen2recomp,https://github.com/UNDERdecoded/Gen2Recomped/releases,"Pokemon - Silver Version (USA, Europe) (SGB Enhanced)"
+Pokemon Crystal ,Gen1recomp ,https://github.com/bryanthaboi/gen1recomp/releases,"Pokemon - Crystal Version (USA, Europe) (Rev 1)"
+Pokemon Crystal ,Gen2recomp,https://github.com/UNDERdecoded/Gen2Recomped/releases,"Pokemon - Crystal Version (USA, Europe) (Rev 1)"
+Resident Evil Gaiden ,Regaiden Recomp,https://github.com/sergiomanzur/regaiden-recomp/releases,Resident Evil Gaiden (USA)
+The Legend of Zelda: Oracle of Ages,OraclesRecomp,https://github.com/kirby-letsgo/oracles-decomp,Need Rom
+The Legend of Zelda: Oracle of Ages,The Oracles Project,https://github.com/thibautbus/top,Need Rom
+The Legend of Zelda: Oracle of Seasons,OraclesRecomp ,https://github.com/kirby-letsgo/oracles-decomp,Need Rom
+The Legend of Zelda: Oracle of Seasons,The Oracles Project,https://github.com/thibautbus/top,Need Rom
+,,,
+,,,
+Fire Emblem: The Sacred Stones,Sacred Stones Recomp ,https://github.com/Lordingard/SacredStonesRecomp,Need Usa Rom
+Final Fantasy Tactics Advance ,FTTA Recomp ,https://github.com/james2doyle/ffta-recomp,Need Rom
+Golden Sun,Gsrandroid,https://github.com/wootbeer/gsrandroid,Need Rom
+Pokémon Emerald ,Pokémon Emerald (Dual Screen),https://github.com/Goldoire/pokeemerald-dualscreen/releases,Pokémon Emerald (USA).gba
+The Legend of Zelda: The Minish Cap,Project Picori (Dual Screen),https://github.com/999sian/tmc,"Legend of Zelda, The - The Minish Cap (USA)"
+WarioWare: Twisted!,WarioWare: Twisted! Recomp,https://github.com/mstan/WarioWareTwistedRecomp,Need Rom and GBA Bios
+Super Mario Advance 3: Yoshi's Island,SMA3 Recomp Android,https://github.com/Edwin2929/sma3-recomp-android.,Yoshi’s Island: Super Mario Advance 3 (USA)
+,,,
+Metroid Prime: Hunters,Hunters Recomp (Dual Screen),https://github.com/aabrole/HuntersRecomp,Metroid Prime Hunters (USA) 1.0 NDS
+,,,
+The Legend of Zelda: Ocarina of Time 3D,Zelda 3DS Android (TriAevum),https://github.com/WINDROID-EMU/RECOMP-ZELDA-3DS-ANDROID,Need rom
+,,,
+Super Mario Bros. Wonder,Super Mario Bros. Wonder Recomp,https://github.com/BelmanteGu/SuperMarioWonderRecomp,Need Rom
+The Legend of Zelda: Link's Awakening,LAS Recomp for Android,https://github.com/mamcjr/LASRecompAndroid,Need Rom
+,,,
+Driver 2: The Wheelman Is Back,ReDriver,https://discord.gg/J3ARd63T4,Need Rom
+,,,
+Ace Combat 3: Electrosphere,Ac3-Decomp,https://github.com/vzepec/ac3-decomp,Need Rom
+Castlevania: Symphony of the Night,Symphony Recomp,https://github.com/sergiomanzur/SymphonyRecomp,Game Files
+Crash Bandicoot ,Crash Bandicoot Launcher,https://github.com/Matteo842/CrashBandicoot-Launcher,"Crash Bandicoot PS1, NTSC-U, SCUS-94900"
+CTR: Crash Team Racing,CRT Native,https://github.com/Simon358/ctr-native-android/releases,CTR - Crash Team Racing (USA)
+CTR: Crash Team Racing,CRT Native DS (Dual Screen),https://github.com/igawa6/ctr-native-android,CTR - Crash Team Racing (USA)
+Digimon World 3,DW 2003 (Dual Screen),https://github.com/rsigristc/DW3-DS-Android,https://vimm.net/vault/51597
+Doom (Playstation),Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,.bin and .cue files
+Final Doom (Playstation),Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,.bin and .cue files
+Jackie Chan: Stuntmaster,ReChan,https://github.com/deivid22srk/ReChan-Android,https://vimm.net/vault/6590
+KoroKoro Postnin ,KokoroRecomp,https://github.com/elprogramadorloco-arch/korokoro-recomp,Need Rom
+Silent Hill,Silent Hill Native Port,https://github.com/SlickAmogus/silent-hill-decomp/,https://vimm.net/vault/6039
+Tekken 3,Tekken 3 Expanded,https://github.com/omarma/tekken3-expanded,Need PS1 ROM and arcade roms
+Tomba! 2: The Evil Swine Return,Tomba Recomp DS (Dual Screen),https://github.com/igawa6/Tomba2RecompDS,https://vimm.net/vault/6044
+,,,
+Dragon Ball Z: Budokai Tenkaichi 3,Tenkaichi3Decomp Android,https://github.com/dfdx047/Tenkaichi3DecompAndroid,Need Rom
+ICO,ico-pc,https://github.com/nathanialf/ico-pc,Need Rom
+,,,
+BloodBorne,BloodBorne Android,https://github.com/ducvd89/Bloodborne-Android,Need Rom
+God of War III: Remastered ,God of War III Remastered for Android,https://github.com/zFitness/gow3_android,Need Rom
+P.T.,P.T. for Android (Dual Screen),https://github.com/StoneColdOS/pt-pc,P.T. .pkg
+,,,
+Grand Theft Auto: Liberty City Stories ,PSPRecomp · Liberty City Stories,https://github.com/codepdbh/PSPRecomp-LCS-Android,Need Rom
+Grand Theft Auto: Vice City Stories,PSPRecomp · Vice City Stories,https://github.com/codepdbh/PSPRecomp-VCS-Android,https://drive.google.com/file/d/1ImBiLS5RXe0PUco1HWVuVufVuTFVaKvC/view?usp=sharing
+MotorStorm: Arctic Edge,PSP Recomp - MSAE,https://github.com/coole42-pixel/PSPRecomp-MSAE,Need Rom
+Monster Hunter Portable 3rd HD Ver.,Yakumo,https://github.com/TeamGDB/Yakumo,Need Rom
+,,,
+Dead or Alive: Xtreme Beach Volleyball,Dead or Alive Xtreme Beach Volleyball · Android,https://github.com/Wannamingo/DoAXBV,Need Rom
+Far Cry: Instincts,Fci-Recomp,https://github.com/VinceIP/fci-recomp,
+Halo: Combat Evolved,Halo 1 Decomp,https://github.com/cybersecurity/halo-ce-universal,https://archive.org/download/halo-combat-evolved-usa-rev-2.xiso
+Halo: Combat Evolved,Halo 1 Decomp Fork,https://github.com/thelinkin3000/halo-ce-universal,https://archive.org/download/halo-combat-evolved-usa-rev-2.xiso
+Halo: Combat Evolved,Halo 1 Touch Control Fork,https://github.com/theLlamaNet/halo-ce-android,https://archive.org/download/halo-combat-evolved-usa-rev-2.xiso
+JSRF: Jet Set Radio Future,JSRF Unleashed ,https://github.com/JuMatt/JetSetRadioFuture-Unleashed,Need Rom 
+Need For Speed: Underground,nfsu1-Android,https://github.com/cherepavel/nfsu1-android,Need Rom
+,,,
+Devil May Cry 4,Dmc3 Recomp ,https://t.me/MUMUSBSf/25072,Need Rom
+Rayman Origins,Rayman Origins Recompiled ,https://apkvision.org/games/rayman-origins-134823,Need Game Files
+Ultra Street Fighter IV,Ultra Street Fighter IV Recomp,https://apkvision.org/games/action/ultra-street-fighter-iv-134821,?
+,,,
+Asura's Wrath,Asura's Wrath Recompiled,https://github.com/PauloUbirajara/asuras-wrath-recomp,Need Rom
+Banjo-Kazooie: Nuts & Bolts,Renut Android ,https://github.com/Innersargento/Renut-Android,Need Rom
+Blue Dragon ,BlueDroid,https://github.com/RedZeroGotcha/BlueDroid,Need Rom
+Burnout Revenge,Xerenge,https://github.com/shipa-2/Xerenge,Need Rom
+Call of Duty: Modern Warfare 2,Modern Warfare 2 Android,https://github.com/OpenPort-Labs/mw2-android,Need Rom
+Dante's Inferno,Dante's Inferno - Android Port,https://github.com/WINDROID-EMU/Dantes-inferno-Android/releases,"Dante's Inferno (USA, Europe) ISO"
+Dragon Ball Z: Burst Limit,DBZ Burst Limit Android,https://github.com/nahalewski/DBZBL-Android-LAN,Need Rom
+Dragon Ball: Raging Blast 2,Dragon Ball Raging Blast 2 Recompiled,https://github.com/moddedrounds/RB2-Android,Need Rom
+Eternal Sonata,Eternal Sonata Reprise,https://github.com/birabittoh/EternalSonataReprise,Need pal rom
+Forza Horizon ,Pinyon Shift,https://github.com/arcanite24/pinyon-shift,Need Rom
+Forza Horizon 2,FH2 Recompiled,https://github.com/Gabrick75/fh2-recompiled,Need Rom
+GoldenEye 007: Reloaded,Golden Eye Recomp (Dual Screen),https://github.com/jeffory/GoldenEye-Recomp/releases,Golden Eye 007 Remaster folder
+Grand Theft Auto IV,LibertyRecompAndroid,https://github.com/vaduur/LibertyRecompAndroid,Need Rom
+Lost Odyssey ,Lost Odyssey Recomp,https://github.com/freefrank/LostOdysseyRecomp,Need Game Files 
+Mortal Kombat vs. DC Universe,MKVDCU Android,https://github.com/lemooz/MKVDCU-Android,Need Rom
+Naruto: Rise of a Ninja,Naruto: Rise of a Ninja — Port Nativo,https://github.com/Masterllgod/naruto-rise-of-a-ninja-port-nativo,Need Rom
+Naruto Shippuden: Ultimate Ninja Storm Revolution,Naruto Shippuden: Ultimate Ninja Storm Revolution — Port Nativo,https://github.com/Masterllgod/naruto-storm-revolution-port-nativo,Need Rom
+Naruto Shippuden: Ultimate Ninja Storm 2,Naruto Shippuden: Ultimate Ninja Storm 2 — Port Nativo,https://github.com/Masterllgod/naruto-storm-2-port-nativo,Need Rom
+Naruto Shippuden: Ultimate Ninja Storm 3 Full Burst,Naruto Shippuden: Ultimate Ninja Storm 3 Full Burst — Port Nativo,https://github.com/Masterllgod/naruto-storm-3-full-burst-port-nativo,Need Rom
+Naruto Shippuden: Ultimate Ninja Storm Generations,Naruto Shippuden: Ultimate Ninja Storm Generations — Port Nativo,https://github.com/Masterllgod/naruto-storm-generations-port-nativo:,Need Rom
+Need For Speed: Most Wanted (2005),NFSMW Recomp ,https://github.com/WINDROID-EMU/NFSMW-RECOMP,Need Iso
+Need For Speed: Most Wanted (2005),NFSMW Android Evolved,https://github.com/codepdbh/nfsmw-android,Spain Pal ISO
+Need For Speed: Most Wanted (2005),NFSMW Recompiled,https://github.com/victorgbd/NFSMW-Recompiled-Mobile,Need Rom
+Need for Speed: Carbon,NFS Carbon Recomp ,https://github.com/Sampreeth004/nfs-carbon-recomp,Need Rom
+Naughty Bear,Naughty Bear Restuff Android Port,https://github.com/deivid22srk/naughtybear-restuff-android,Naughty Bear Gold Edition ISO
+Real Steel,ReCompiled Steel,https://github.com/tokeneffortports/ReCompiledSteel,Need Rom
+Skate 3,Skate3 Mobile,https://github.com/Buku313/Skate3-Mobile,Skate 3 ISO
+Skate 3,Skate 3 android,https://github.com/andrewnakas/skate3-android/releases,Skate 3 ISO
+Skate 3,Skate 3 Port,https://github.com/darchap/Skate3-Port,Skate 3 ISO
+Silent Hill: Downpour,Silent Hill: Downpour — Android Port,https://github.com/WINDROID-EMU/Silent-Hill-Downpour-port-android,"Silent Hill - Downpour (USA, Europe) ISO"
+Sonic The Hedgehog (2006),Marathon Recompiled,https://github.com/Player124413/MarathonRecomp_android-test-edition/releases,Sonic 2006 ISO
+Sonic Unleashed,Unleashed Recomp,https://github.com/SansNope/UnleashedRecomp-Android/releases,Sonic Unleashed ISO
+The Dishwasher: Dead Samurai ,DishSoap,https://github.com/Hdmaniak/DishSoap,xbla rom
+Tony Hawk's Project 8,Project8Recomp,https://github.com/moddedrounds/THP8-Android,Need Rom
+,,,
+A.W.O.L,Zeta Touch ,http://opentouchgaming.com/zeta-touch/,"awol.grp, awol.groinfo, awol_customize.con, awol_mods.con"
+Alien versus Predator 2000,Sigma Touch ,http://opentouchgaming.com/sigma-touch/,AVP Folder
+Amnesia: The Dark Descent,Sclerosis,https://createam.itch.io/sclerosis,Game folder
+Arx Fatalis,Arx Libertaris,https://f-droid.org/es/packages/com.arxlibertatis/,arx folder
+Blake Stone: Aliens of Gold,Alpha Touch ,http://opentouchgaming.com/alpha-touch/,.VSI files
+Blake Stone: Planet Strike ,Alpha Touch ,http://opentouchgaming.com/alpha-touch/,.VSI files
+Blood: One Unit Whole Blood ,Zeta Touch,http://opentouchgaming.com/zeta-touch/,"BLOOD.INI, BLOOD.RFF, GUI.RFF, SOUND.RFF, TILES000...TILES017.ART"
+Cryptic Passage for Blood,Zeta Touch,http://opentouchgaming.com/zeta-touch/,"CP01...CP09.MAP, CPART07.AR_, CPART15.AR_, CPBB01...CPBB04.MAP, CPSL.MAP, CRYPTIC.INI, CRYPTIC.SMK, CRYPTIC.WAV"
+Call of Duty 4: Modern Warfare ,Unofficial Port ,https://pan.quark.cn/s/a1ac2e9ae40e#/list/share,Need Game Files 
+Chex Quest,Delta Touch,https://play.google.com/store/apps/details?id=com.opentouchgaming.deltatouch,CHEX.WAD
+Chex Quest 2,Delta Touch,https://play.google.com/store/apps/details?id=com.opentouchgaming.deltatouch,CHEX2.WAD
+Chex Quest 3,Delta Touch,https://play.google.com/store/apps/details?id=com.opentouchgaming.deltatouch,CHEX3.WAD
+Classic Doom 3,Delta Touch,https://play.google.com/store/apps/details?id=com.opentouchgaming.deltatouch,cdoom folder
+Command & Conquer ,Mobile CC,https://play.google.com/store/apps/details?id=com.oufamily.ccmobile,Need Game Files
+Command & Conquer: Red Alert,Mobile CC,https://play.google.com/store/apps/details?id=com.oufamily.ccmobile,Need Game Files
+Counter-Strike: Source,Source Engine Port,https://discord.com/invite/source-engine-4-android-672055862608658432,cstrike folder
+Crosscode,CrossAndroid,https://gitlab.com/Namnodorel/crossandroid/blob/master/README.md,Need Game Files
+Day of Defeat: Source,Free (Dev Discord Server),https://discord.com/invite/source-engine-4-android-672055862608658432,dod folder
+Deltarune,DeltaQuick,https://play.google.com/store/apps/details?id=com.bookerpuzzle.deltaquick&hl=es_UY&referrer=utm_source%3Dgoogle%26utm_medium%3Dorganic%26utm_term%3Ddeltaquick&pcampaignid=APPU_1_6QR-ap6xNsaL5OUPhbjJqAM,Game Files
+Doom ,Delta Touch,https://play.google.com/store/apps/details?id=com.opentouchgaming.deltatouch,DOOM.WAD
+Doom II,Delta Touch,https://play.google.com/store/apps/details?id=com.opentouchgaming.deltatouch,DOOM2.WAD
+Doom II - No Rest for the Living ,Delta Touch,https://play.google.com/store/apps/details?id=com.opentouchgaming.deltatouch,NERVE.WAD
+Doom 3,Delta Touch,https://play.google.com/store/apps/details?id=com.opentouchgaming.deltatouch,base folder
+Doom 3: Resurrection Of Evil,Delta Touch,https://play.google.com/store/apps/details?id=com.opentouchgaming.deltatouch,d3xp folder
+Doom 64 Remastered ,Delta Touch,https://play.google.com/store/apps/details?id=com.opentouchgaming.deltatouch,"DOOM64.WAD, DOOMSND.DLS, Doom64.kpf"
+Duke Nukem 3D Atomic Edition ,Zeta Touch,http://opentouchgaming.com/zeta-touch/,DUKE3D.GRP
+Duke Caribbean: Life's a Beach,Zeta Touch,http://opentouchgaming.com/zeta-touch/,VACATION.GRP
+Duke: Nuclear Winter,Zeta Touch,http://opentouchgaming.com/zeta-touch/,NWINTER.GRP
+Duke It Out in D.C.,Zeta Touch,http://opentouchgaming.com/zeta-touch/,DUKEDC.GRP
+Dune: The Battle for Arrakis,Decompilation ,https://4pda.to/forum/index.php?showtopic=1127235&__cf_chl_tk=ZyILMFmv0g5DvxmaBBy09aFnxUQlqWe13D1T9qlcOe8-1791131660-1.0.1.1-AegH2vVUtTAE9quz2ITUjqG1.BF6lNeGtr7q4Y6l0vg,Game files in the post
+Eldritch,Unofficial Port,https://t.me/vocies61chaos/436,No.
+Far Cry,Sigma Touch,http://opentouchgaming.com/sigma-touch,Need Game Files
+Final Doom - Evilution,Delta Touch,https://play.google.com/store/apps/details?id=com.opentouchgaming.deltatouch,TNT.WAD
+Final Doom - The Plutonia Experiment,Delta Touch,https://play.google.com/store/apps/details?id=com.opentouchgaming.deltatouch,PLUTONIA.WAD
+Five Nights at Freddy's ,FNAF Redone Again (Dual Screen),https://www.reddit.com/r/AynThor/s/IFMidomhmo,Need Game Files
+Grand Theft Auto V,Unofficial Port,https://www.reddit.com/r/AndroidNativePorts/s/BVwaW8MmXB,Game Files
+HacX,Delta Touch,https://play.google.com/store/apps/details?id=com.opentouchgaming.deltatouch,HACX.WAD
+Hades 2,Unofficial Port ,https://discord.gg/axKprDPKgf,Need Mac version Game Files
+Half Life Deathmatch Source,Source Engine Port,https://discord.com/invite/source-engine-4-android-672055862608658432,hl1mp folder
+Half-Life 2,Source Engine Port,https://discord.com/invite/source-engine-4-android-672055862608658432,srceng folder
+Half-Life 2: Deathmatch,Source Engine Port,https://discord.com/invite/source-engine-4-android-672055862608658432,hl2mp folder
+Half-Life 2: Episode 2,Source Engine Port,https://discord.com/invite/source-engine-4-android-672055862608658432,ep2 folder
+Half-Life 2: Episode One,Source Engine Port,https://discord.com/invite/source-engine-4-android-672055862608658432,episodic folder
+Half-Life: Source,Source Engine Port,https://discord.com/invite/source-engine-4-android-672055862608658432,hl1 folder
+Heretic: Shadow of the Serpent Riders,Delta Touch,https://play.google.com/store/apps/details?id=com.opentouchgaming.deltatouch,HERETIC.WAD
+Heroes Of Might And Magic III,VCMI,https://vcmi.eu/,"Data, Maps, Mp3 folders"
+Hexen II,Quad Touch ,https://play.google.com/store/apps/details?id=com.opentouchgaming.quadtouch,data1 folder
+Hexen II: Mission Pack – Portal of Praevus⁠,Quad Touch ,https://play.google.com/store/apps/details?id=com.opentouchgaming.quadtouch,portals folder
+Hexen: Beyond Heretic ,Delta Touch,https://play.google.com/store/apps/details?id=com.opentouchgaming.deltatouch,HEXEN.WAD
+Hexen: Deathkings of the Dark Citadel,Delta Touch,https://play.google.com/store/apps/details?id=com.opentouchgaming.deltatouch,HEXDD.WAD
+Homeworld,Unofficial Port,http://beloko.com/hw.html,https://archive.org/download/homeworld_202110
+Hyper Dragon Ball Z,Unofficial Port,https://www.mediafire.com/file/7lnv12r0dsirjlk/HyperDBZ2.0-ByArgeus.zip/file,Included in the download
+Insaniquarium! Deluxe,Insaniquarium Portable,https://ksylvestre.itch.io/insaniquarium-portable,Need Game Files
+Ion Fury,Zeta Touch,http://opentouchgaming.com/zeta-touch/,"fury.grp, fury.grpinfo"
+Ion Fury Afteshock,Zeta Touch,http://opentouchgaming.com/zeta-touch/,"fury.grp, fury.grpinfo"
+Lego Racers,StepOnIt,https://navigatorsharp.itch.io/steponit,Download in app
+Mad Max,MAD MAX - ANDROID (ARM64),https://discord.gg/WdJvZhqvrU,Need Game Files
+Master Levels for Doom II,Delta Touch,https://play.google.com/store/apps/details?id=com.opentouchgaming.deltatouch,Master Levels for Doom II WADS
+Medal of Honor: Allied Assault ,Source Engine Port,http://opentouchgaming.com/alpha-touch/,main folder
+Medal of Honor:Allied Assault - Breakthrough,Source Engine Port,http://opentouchgaming.com/alpha-touch/,maintt folder
+Medal of Honor:Allied Assault - Spearhead,Source Engine Port,http://opentouchgaming.com/alpha-touch/,mainta folder
+Mina The Hollower,Unofficial Port ,https://discord.gg/axKprDPKgf,Need Mac Game Files 
+NAM,Zeta Touch,http://opentouchgaming.com/zeta-touch/,"NAM.GRP, NAM.CON"
+Need for Speed Most Wanted 2012,NEED FOR SPEED MOST WANTED (2012) - ANDROID,https://discord.gg/WdJvZhqvrU,Need Game Files
+OpenArena,Quad Touch ,https://play.google.com/store/apps/details?id=com.opentouchgaming.quadtouch,baseoa folder
+Penumbra: Black Plague,Antumbra,https://createam.itch.io/antumbra,Need Game Files
+People Playground,Unofficial Port,https://discord.gg/sDptTWNTa4,Need Game Files
+Portal,Source Engine Port,https://discord.com/invite/source-engine-4-android-672055862608658432,portal folder
+Postal III,Source Engine Port ,https://files.workbench.network/srceng/itzvladik/apk/p3.apk,https://archive.org/download/postal-iii/Postal%20III.zip
+PowerSlave Exhumed,Zeta Touch,http://opentouchgaming.com/zeta-touch/,STUFF.DAT
+Quake ,Quad Touch ,https://play.google.com/store/apps/details?id=com.opentouchgaming.quadtouch,id1 folder
+Quake 4,Sigma Touch ,http://opentouchgaming.com/sigma-touch/,q4base folder
+Quake II,Quad Touch ,https://play.google.com/store/apps/details?id=com.opentouchgaming.quadtouch,baseq2 folder
+Quake II Mission Pack: Ground Zero,Quad Touch ,https://play.google.com/store/apps/details?id=com.opentouchgaming.quadtouch,rogue folder
+Quake II Mission Pack: The Reckoning,Quad Touch ,https://play.google.com/store/apps/details?id=com.opentouchgaming.quadtouch,xatrix folder
+Quake III Arena,Sdlioq3a,https://play.google.com/store/apps/details?id=de.fpsclasico.sdlioq3a&hl=en_IN,baseq3 folder
+Quake III Arena,Quad Touch ,https://play.google.com/store/apps/details?id=com.opentouchgaming.quadtouch,baseq3 folder
+QUAKE Mission Pack 1: Scourge of Armagon,Quad Touch ,https://play.google.com/store/apps/details?id=com.opentouchgaming.quadtouch,hipnotic folder
+QUAKE Mission Pack 2: Dissolution of Eternity,Quad Touch ,https://play.google.com/store/apps/details?id=com.opentouchgaming.quadtouch,rogue folder 
+Quake Mission Pack 3: Dimension of the Past,Quad Touch ,https://play.google.com/store/apps/details?id=com.opentouchgaming.quadtouch,dopa folder
+Quake: Dimension of the Machine,Quad Touch ,https://play.google.com/store/apps/details?id=com.opentouchgaming.quadtouch,mg1 folder 
+Real Return to Castle Wolfenstein ,Source Engine Port,http://opentouchgaming.com/alpha-touch/,main folder
+Redneck Rampage,Zeta Touch,http://opentouchgaming.com/zeta-touch/,REDNECK.GRP
+Redneck Rampage Rides Again,Zeta Touch,http://opentouchgaming.com/zeta-touch/,"REDNECK.GRP, REDINT.MVE"
+Redneck Rampage: Suckin' Grits on Route 66,Zeta Touch,http://opentouchgaming.com/zeta-touch/,rt66.GRP
+Return to Castle Wolfenstein,Source Engine Port,http://opentouchgaming.com/alpha-touch/,main folder
+Rise of the Triad: Dark War,Source Engine Port,http://opentouchgaming.com/alpha-touch/,"DARKWAR.RTC, DARKWAR.RTL, DARKWAR.WAD, REMOTE1.RTS, HUNTBGIN.RTL"
+Rise of the Triad: The Hunt Begin,Source Engine Port,http://opentouchgaming.com/alpha-touch/,"DARKWAR.RTC, DARKWAR.RTL, DARKWAR.WAD, REMOTE1.RTS, HUNTBGIN.RTL"
+S.T.A.L.K.E.R.: Call of Pripyat,OpenXRay Android ,https://gofile.io/d/LFfGV8fn,https://gogunlocked.com/s-t-a-l-k-e-r-call-of-pripyat-free-download
+S.T.A.L.K.E.R.: Clear Sky,OpenXRay Android ,https://gofile.io/d/LFfGV8fn,https://steamrip.com/stalker-clear-sky-free-download-1w
+S.T.A.L.K.E.R.: Shadow of Chernobyl,OpenXRay Android,https://gofile.io/d/LFfGV8fn,https://steamrip.com/stalker-shadow-of-chernobyl-l1
+Shadow Warrior,Zeta Touch,http://opentouchgaming.com/zeta-touch/,SW.GRP
+Shadow Warrior: Twin Dragon,Zeta Touch,http://opentouchgaming.com/zeta-touch/,TwinDrag.GRP
+Shadow Warrior: Wanton Destruction,Zeta Touch,http://opentouchgaming.com/zeta-touch/,WD.RGP
+Sleeping Dogs: Definitive Edition,SLEEPING DOGS: DEFINITIVE EDITION - ANDROID (ARM64) ,https://discord.gg/WdJvZhqvrU,Need Game Files
+Sonic 2 Absolute,Sonic 2 Absolute ,https://gamebanana.com/mods/665963,Alternative APK and files
+Sonic CD Restored,Android Port ,https://gamejolt.com/games/RestoredCDAndroid/1086519,??
+Spear of Destiny ,Source Engine Port,http://opentouchgaming.com/alpha-touch/,.SOD files
+Spear of Destiny: Mission 2: Return to Danger,Source Engine Port,http://opentouchgaming.com/alpha-touch/,.SD2 files
+Spear of Destiny: Mission 2: Return to Danger,Source Engine Port,http://opentouchgaming.com/alpha-touch/,.SD3 files
+STAR WARS™ Dark Forces ,Psi Touch,http://opentouchgaming.com/psi-touch/,Game Files
+STAR WARS™ Jedi Knight - Jedi Academy™,Psi Touch,http://opentouchgaming.com/psi-touch/,base folder
+STAR WARS™ Jedi Knight II - Jedi Outcast™,Psi Touch,http://opentouchgaming.com/psi-touch/,base folder
+Strife: Veteran Edition,Delta Touch,https://play.google.com/store/apps/details?id=com.opentouchgaming.deltatouch,"STRIGE1.WAD, SVE.WAD, vocies61 S.WAD"
+Team Fortress 2 Legacy,TF2 Re Classic,https://discord.gg/yKMmGSHBA9,in same discord server
+The AMC Squad,Zeta Touch,http://opentouchgaming.com/zeta-touch/,Game Files
+The Elder Scrolls 3: Morrowind,Alpha3,https://gitlab.com/duron27/alpha3,Game Files
+Transport Tycoon Deluxe,OpenTTD,https://play.google.com/store/apps/details?id=org.openttd.sdl,Game Files
+Undertale,Quicktale ,https://play.google.com/store/apps/details?id=com.bookerdev.quicktale&hl=es_UY&referrer=utm_source%3Dgoogle%26utm_medium%3Dorganic%26utm_term%3Dquicktale&pcampaignid=APPU_1_3AN-asTrHOyb5OUP4JnQ-QI,Game Files
+Unreal ,Sigma Touch ,http://opentouchgaming.com/sigma-touch/,Game Files
+Unreal Tournament 99,Sigma Touch ,http://opentouchgaming.com/sigma-touch/,"Maps, Music, Sounds, System and Textures Folders"
+Warcraft III: Reign of Chaos ,Warsmash,https://f-droid.org/en/packages/net.warsmash.phone/,Game Files 1.29.2
+Warcraft III: The Frozen Throne,Warsmash,https://f-droid.org/en/packages/net.warsmash.phone/,Game Files 1.29.2
+Wolfenstein 3D,ECWolf,http://maniacsvault.net/ecwolf/download.php,.WL6 files
+Wolfenstein 3D,Source Engine Port,http://opentouchgaming.com/alpha-touch/,.WL6 files
+World War II GI,Zeta Touch,http://opentouchgaming.com/zeta-touch/,WW2GI.GRP
+WRATH: Aeon of Ruin,Quad Touch ,https://play.google.com/store/apps/details?id=com.opentouchgaming.quadtouch,Game Files
+Your Only Move is Hustle,Yomi Patcher,https://www.mediafire.com/file/6u3aqplvcc0n5xg/yomiPatcher.apk/file,Game Files
+,,,
+0 A.D.,0 A.D. para Android ARM64,https://github.com/Revers-BR/0ad-android-releases,Need Game Files
+Alabaster Dawn,Unofficial Port,https://github.com/moronigranja/alabaster-android,Need Game Files 
+American McGee's Alice,Looking Glass,https://github.com/Player124413/Looking-Glass-android-edition,Need 2011 Game data
+Arx Fatalis,Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,arx folder
+Barony,Barony Android Port,https://github.com/DifferentNet/barony-android-port/tree/main,Barony 5.0.2
+BroForce,BroForce Android,https://github.com/BelmanteGu/BroforceAndroid,Need Game Files
+Caesar III,Augustus,https://github.com/Keriew/augustus,Game Files
+Caesar III,Julius,https://github.com/bvschaik/julius/releases/tag/v1.8.0,Game Files
+Cave Story,doukutsu-rs,https://github.com/doukutsu-rs/doukutsu-rs,data folder
+Celeste,Rotating Art Launcher ,https://github.com/FireworkSky/RotatingartLauncher,Celeste 1.4.0.0 Linux
+Celeste,Celeste Android ,https://github.com/BelmanteGu/CelesteAndroid,Celeste 1.4.0.0 Linux
+Chex Quest,Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,CHEX.WAD
+Chex Quest,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,CHEX.WAD
+Chex Quest 2,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,CHEX2.WAD
+Chex Quest 3,Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,CHEX3.WAD
+Chex Quest 3,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,CHEX3.WAD
+Classic Doom 3,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,cdoom folder
+Command & Conquer ,Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,Game Files
+Command & Conquer: Generals: Zero Hour,GeneralsZH Android Port,https://github.com/MYSOREZ/GeneralsZH-Android-Port,Need Game Files 
+Command & Conquer: Red Alert,Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,Game Files 
+Counter-Strike 1.6,CS16-Client,https://github.com/Velaron/cs16-client,https://youtu.be/iy7ybxiMvzA
+Day Of Defeat Classic,Xash3D FWGS,https://github.com/fwgs/xash3d-fwgs,https://www.mediafire.com/download/hck31fmtdp1pk4m/xashdod.zip
+Descent,Descent Mobile,https://github.com/devint1/Descent-Mobile,https://archive.org/details/Descent_896
+Descent,Descent Android ,https://github.com/wootbeer/Descent-Android,https://archive.org/details/Descent_896
+Descent II,Descent 2 Mobile,https://github.com/devint1/Descent2-Mobile,https://wowroms.com/en/roms/dos/descent-ii-1996/147012.html
+Descent II,Descent II Android,https://github.com/wootbeer/Descent2-Android,https://wowroms.com/en/roms/dos/descent-ii-1996/147012.html
+Diablo ,DevilutionX,https://github.com/diasurgical/DevilutionX/releases,devilution folder
+Doom ,Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,DOOM.WAD
+Doom ,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,DOOM.WAD
+Doom 3,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,base folder
+Doom 3 BFG Edition ,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,base folder
+Doom 3 BFG Edition ,Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,base folder
+Doom 3: Resurrection Of Evil,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,d3xp folder
+Doom 3: The Lost Mission,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,d3le folder
+Doom 64 Remastered ,Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,"DOOM64.WAD, DOOMSND.DLS, Doom64.kpf"
+Doom II,Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,DOOM2.WAD
+Doom II,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,DOOM2.WAD
+Doom II - No Rest for the Living ,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,NERVE.WAD
+Doom II RPG,Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,Doom 2 RPG.ipa
+Doom RPG,Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,DoomRPG.zip
+Dr. Robotnik's Ring Racers,Ring Racers Android Port,https://github.com/bitten2up/RingRacers/releases,Game Assets
+Enemy Territory Quake Wars,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,https://archive.org/download/ETQWDVD/ETQWDVD.iso
+Fallout,Fallout Community Edition,https://github.com/alexbatalov/fallout1-ce/,fallout folder
+Fallout 2: A Post Nuclear Role Playing Game,Fallout 2 Community Edition ,https://github.com/alexbatalov/fallout2-ce/releases,Fallout 2 folder
+Fallout New Vegas,OpenNevada,https://github.com/RedZeroGotcha/OpenNevada-Android,Need Game Files
+Far Cry,Near Chuckle Android Edition,https://github.com/Player124413/NearChuckle-android-edition/,Game Files
+Final Doom - Evilution,Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,TNT.WAD
+Final Doom - Evilution,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,TNT.WAD
+Final Doom - The Plutonia Experiment,Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,PLUTONIA.WAD
+Final Doom - The Plutonia Experiment,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,PLUTONIA.WAD
+Freespace 2,FreeSpace,https://github.com/lubomyr/freespace2,Need Game Files
+Freespace 2,KnossosNET,https://github.com/KnossosNET/Knossos.NET,??
+FTL: Faster Than Light ,pocket wormhole,https://github.com/adamkulik/pocket-wormhole,Need Gam Files 
+Galaxy on Fire 2™ Full HD,Galaxy On Fire 2 Unity Remake,https://github.com/JoppieToppie/Galaxy-on-Fire-2-Unity-Remake,Need Game Files
+Garry's Mod,GDroid,https://github.com/tinsarfal/GDroid,https://gofile.io/d/8lP0eed9
+God of Thunder,gotandroid,https://github.com/wootbeer/gotandroid,Need Game Files
+Grand Theft Auto III,Re3 Android Evolved,https://github.com/codepdbh/re3-android-port-evolved,Need Game Files 
+Grand Theft Auto V,XHYN V,https://github.com/XHYN-PH/XHYN-V,Game Files
+Grand Theft Auto V,BytArch GTA-V,https://github.com/bytarch/gta5mobile-android,Need Game Files
+Grand Theft Auto: Vice City,REVC Android Evolved ,https://github.com/codepdbh/revc-android-port-evolved,Need Game Files 
+HacX,Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,HACX.WAD
+HacX,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,HACX.WAD
+Half-Life,Xash3D FWGS ,https://github.com/fwgs/xash3d-fwgs,https://youtu.be/1Q5vFX4yXYI
+Half-Life Blue Shift,Xash3D FWGS ,https://github.com/fwgs/xash3d-fwgs,https://youtu.be/N5Xapd7Q9W8
+Half-Life Opposing Force,Xash3D FWGS ,https://github.com/fwgs/xash3d-fwgs,https://youtu.be/2tfwPzvvP2Q
+Happy Wheels,Open Wheels,https://github.com/officialmelon/OpenWheels,Need Game Files
+Heretic: Shadow of the Serpent Riders,Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,HERETIC.WAD
+Heretic: Shadow of the Serpent Riders ,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,HERETIC.WAD
+Heroes Of Might And Magic II,Fheroes2,https://github.com/ihhub/fheroes2,"ANIM, DATA, MAPS and MUSIC folders"
+Hexen II,Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,data1 folder
+Hexen II,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,data1 folder
+Hexen II: Mission Pack – Portal of Praevus⁠,Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,portals folder
+Hexen II: Mission Pack – Portal of Praevus⁠,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,portals folder
+Hexen: Beyond Heretic ,Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,HEXEN.WAD
+Hexen: Beyond Heretic ,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,HEXEN.WAD
+Hexen: Deathkings of the Dark Citadel,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,HEXDD.WAD
+Hollow Knight: Silksong,SilksongAndroid (Dual Scren),https://github.com/jakobkhansen/SilksongAndroid,Need Linux Game Files
+Hollow Knight: Silksong,SilksongAndroidAchievements (Dual Screen),https://github.com/OmegaUwUr/SilksongAndroid-Achievements,Need Linux Game Files
+Icarus Starship Command Simulator,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,base folder
+Infinite Blade II,Unofficial Port,https://github.com/jelqedagain/ib-2-3-android/releases,Need Game Files
+Infinite Blade III,Unofficial Port,https://github.com/jelqedagain/ib-2-3-android/releases,Need Game Files 
+Jagged Alliance 2,ja2 stracciatella,https://ja2-stracciatella.github.io/download/,Game Files
+Jazz Jackrabbit ,Open Jazz,https://github.com/AlisterT/openjazz,Need Game Files
+Jazz Jackrabbit 2,Jazz 2 Ressurection,https://github.com/deathkiller/jazz2,Game Files
+Jill of The Jungle,Jill android ,https://github.com/wootbeer/jillandroid,Need Game Files
+Look Outside ,Unofficial Port,https://github.com/Guixs232/Look-Outside-Recomp,Need Game Files
+Master Levels for Doom II,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,Master Levels for Doom II WADS
+Medal of Honor: Allied Assault ,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,main folder
+Medal of Honor:Allied Assault - Breakthrough,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,maintt folder
+Medal of Honor:Allied Assault - Spearhead,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,mainta folder
+Minecraft Java Edition,ZalithLauncher2,https://github.com/ZalithLauncher/ZalithLauncher2,?
+Minecraft Java Edition,Fold Craft Launcher,https://github.com/FCL-Team/FoldCraftLauncher/blob/main/README_EN.md,?
+Minecraft Java Edition,Mojo Launcher ,https://github.com/MojoLauncher/MojoLauncher,?
+Minecraft Java Edition,PojavLauncher,https://github.com/pojavlauncherteam/pojavlauncher,
+Need for Speed II: SE,NFSIISE ,https://github.com/zaps166/NFSIISE,fedata and gamedata folders
+Need For Speed III: Hot Pursuit,nfs3recompiled Android,https://github.com/ZloiKILLER/nfs3recompiled-android,fedata and gamedata folders
+Need For Speed Underground 2,Need For Speed Underground 2 Recompiled ,https://github.com/codepdbh/nfsu2-recompiled,Need Game Files
+OpenArena,Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,baseoa folder
+OpenArena,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,baseoa folder
+Outlaws,The Force Engine,https://github.com/SoVRHere/TheForceEngineVR/releases,Game Files
+Pinball Fantasies,Pbfandroid,https://github.com/wootbeer/pbfandroid,Need Game Files 
+Plants vs Zombies,PvZ Portable ,https://github.com/wszqkzqk/PvZ-Portable,Needs Goty Edition
+Pokemon Reloaded,Pokémon Reloaded en Android,https://github.com/Klisee/pokemon-reloaded-android,Need Game Files
+Pokémon Showdown ,Showdown DS (Dual Screen),https://github.com/castdrian/showdown-ds,??
+Pokemon Survivor Burst,Unofficial Port,https://github.com/TryTheSauceBoss/pokemon-survivorburst-android,Need game Files
+Post Void,PostVoid Mobile ,https://github.com/SanGraphic/PostVoidMobile,Need Game Files
+Prey ,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,base folder
+Prison Architect ,Pridroid,https://github.com/udarmolota/pridroid,Game Files
+Project Zomboid,Zomdroid,https://github.com/etonedemid/zomdroid-,Game Files - 41.78.16 by Cc Inno
+Project Zomboid,Zomdroid,https://github.com/udarmolota/zomdroid,Game Files - 41.78.16 by Cc Inno
+Project Zomboid,Zomdroid ,https://github.com/liamelui/zomdroid,Game Files - 41.78.16 by Cc Inno
+Quadrilateral Cowboy,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,base folder
+Quake ,Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,id1 folder by pabwrld
+Quake ,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,id1 folder by pabwrld
+Quake 4,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,q4base folder
+Quake II,Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,baseq2 folder
+Quake II,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,baseq2 folder
+Quake II Mission Pack: Ground Zero,Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,rogue folder
+Quake II Mission Pack: Ground Zero,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,rogue folder
+Quake II Mission Pack: The Reckoning,Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,xatrix folder
+Quake II Mission Pack: The Reckoning,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,xatrix folder
+Quake III Arena,Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,baseq3 folder
+Quake III Arena,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,baseq3 folder
+QUAKE Mission Pack 1: Scourge of Armagon,Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,hipnotic folder
+QUAKE Mission Pack 1: Scourge of Armagon,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,hipnotic folder
+QUAKE Mission Pack 2: Dissolution of Eternity,Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,rogue folder
+QUAKE Mission Pack 2: Dissolution of Eternity,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,rogue folder 
+Quake Mission Pack 3: Dimension of the Past,Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,dopa folder
+Quake Mission Pack 3: Dimension of the Past,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,dopa folder
+Quake: Dimension of the Machine,Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,mg1 folder 
+Quake: Dimension of the Machine,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,mg1 folder 
+R.E.P.O.,R.E.P.O.E.V.R.,https://github.com/Zhes-20/R.E.P.O.E.V.R,https://steamunlocked.org/r-e-p-o-free-download
+Real Return to Castle Wolfenstein ,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,main folder
+Return to Castle Wolfenstein,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,main folder
+Rimworld,Rimdroid,https://github.com/udarmolota/rimdroid,Game Files
+Rise of the Triad: Dark War,ROTT94,https://github.com/h4mu/rott94,"DARKWAR.RTC, DARKWAR.RTL, DARKWAR.WAD, REMOTE1.RTS, HUNTBGIN.RTL"
+Rollercoaster Tycoon ,OpenRCT2,https://github.com/OpenRCT2/OpenRCT2/releases,Game Files
+Rollercoaster Tycoon 2,OpenRCT2,https://github.com/OpenRCT2/OpenRCT2/releases,Game Files
+Selaco,GZSelaco Android (Dual Screen),https://github.com/danillogical/GZSelaco-android,Need Game Files
+Serious Sam Classic : The First Encounter,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,Game Files
+Serious Sam Classic : The First Encounter,Serious Sam Android,https://github.com/Skyrimus/Serious-Sam-Android/releases/tag/v1.05.3,Game Files
+Serious Sam Classic : The Second Encounter,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,Game Files
+Serious Sam Classic : The Second Encounter,Serious Sam Android,https://github.com/Skyrimus/Serious-Sam-Android/releases/tag/v1.05.3,Game Files
+Skin Deep,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,base folder
+Slay the Spire,SlayTheAmethyst,https://github.com/ModinMobileSTS/SlayTheAmethystModded/blob/main/docs/README.en.md#slaytheamethyst,Need Game Files 
+Slay The Spire 2,StS2 Launcher ,https://github.com/Ekyso/StS2-Launcher,"Download game files in app, need steam account"
+Slay The Spire 2,StS2 Mobile Launcher,https://github.com/ModinMobileSTS/Sts2MobileLauncher,Need Game Files 
+Sonic 1  Forever ,Sonic 1 Forever,https://github.com/ElspethThePict/S1Forever/releases/tag/1.5.1,Data.rsdk
+Sonic 3 A.I.R.,Sonic 3 A.I.R.,https://github.com/Eukaryot/sonic3air/releases,Sonic & Knuckles 3 ROM
+Sonic Adventure 2,OpenSA2,https://github.com/kittycache9/OpenSA2,Need Game Files 
+Sonic Mania Plus,Sonic Mania Decompilation,https://github.com/RSDKModding/RSDKv5-Decompilation,Game Files
+Sonic R,Sonic R Android ,https://github.com/ZinexDa/sonic-r-android,PC Game Files by JustMe84!
+Space Station 14,Space Station 14 Mobile ,https://github.com/SolomonNumb1/space-station-14-mobile,Need Game Files 
+Spear of Destiny ,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,.SOD files
+Star Trek: Voyager: Elite Force,Voyager SP Android,https://github.com/imjustadudegamer/VoyagerSP-Android,"pak0...pak03.pk3, efgamex86.dll"
+Star Trek: Voyager: Elite Force Holomatch,Voyager HM Android,https://github.com/imjustadudegamer/VoyagerHM-Android,"pak0...pak03.pk3, efgamex86.dll"
+STAR WARS™ Dark Forces ,The Force Engine,https://github.com/SoVRHere/TheForceEngineVR/releases,Game Files
+STAR WARS™ Jedi Knight - Jedi Academy™,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,base folder
+STAR WARS™ Jedi Knight II - Jedi Outcast™,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,base folder
+STAR WARS™ Jedi Knight: Dark Forces II,OpenJDFK2,https://github.com/shinyquagsire23/OpenJKDF2,"Controls, Episode, MUSIC, Player and Resource folders"
+STAR WARS™ Jedi Knight: Misteries of the Sith,OpenJDFK2,https://github.com/shinyquagsire23/OpenJKDF2,"Controls, Episode, MUSIC, Player and Resource folders"
+Starbound,open Starbound Mobile,https://github.com/RohanBhattacharyya/oSBM/releases,packed.pak
+Stardew Valley,Rotating Art Launcher ,https://github.com/FireworkSky/RotatingartLauncher,Stardew Valley Linux Torrent
+Stardew Valley,Cinderbox,https://github.com/Ekyso/Cinderbox,Game Files
+Strife: Veteran Edition,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,"STRIGE1.WAD, SVE.WAD, vocies61 S.WAD"
+System Shock,System Shock Android ,https://github.com/raposomiguel50/system-shock-android,Game Files
+Team Fortress Classic,TF15-Client,https://github.com/Velaron/tf15-client,https://youtu.be/eiLeaOGQXsE
+Terraria,Rotating Art Launcher ,https://github.com/FireworkSky/RotatingartLauncher,Terraria Linux Torrent 
+The Binding of Isaac ,Isaac Recomp,https://github.com/whylurking/IsaacRecomp,Need Game Files 
+The Elder Scrolls 3: Morrowind,OpenMW android ,https://github.com/Sisah2/openmw-android,Game Files
+The Elder Scrolls II: DaggerFall,DaggerFall Unity,https://github.com/Vwing/daggerfall-unity-android,DaggerfallGameFiles.zip
+The Legend Of Sword And Fairy,sdlpal,https://github.com/sdlpal/sdlpal,Need Game Files
+The Simpsons: Hit & Run,Unofficial Port ,https://github.com/Carlox33/The-Simpsons-Hit-and-Run-Android/releases,Game Files
+Theme Hospital ,CorsixTH Android ,https://github.com/alanwoolley/CorsixTH-Android/releases,HOSP folder
+They Hunger,Xash3D FWGS ,https://github.com/fwgs/xash3d-fwgs,https://youtu.be/nTw3o9b5avU
+Titanic: Adventure Out of Time,titanic-godot - 30th anniversary edition,https://github.com/itskenny0/titanic-godot,Need Game Files
+Tomb Raider,OpenLara,https://github.com/XProger/OpenLara,Data Files
+Touhou 6: The Embodiment of Scarlet Devil,th06 EOSD Android Port,https://github.com/cardanawandra/th06/releases,Need Game Files
+UFO 50,UFO 50 Android Unofficial ,https://github.com/Skyline969/UFO50AndroidUnofficial,https://steamunlocked.org/ufo-50-free-download
+UFO 50,UFO 50 Android Unofficial ,https://github.com/eboody/UFO50AndroidUnofficial,https://steamunlocked.org/ufo-50-free-download
+Unreal Tournament 99,UT99 Android ,https://github.com/Andiweli/UT99-Android,"Maps, Music, Sounds, System and Textures Folders"
+Urban Terror,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,q3ut4 folder
+Valheim,ValDroid,https://github.com/udarmolota/ValDroid,Need Linux Game Files
+Warcraft II: Tides of Darkness,Stratagus,https://github.com/drodin/Stratagus,data.wargus.zip
+Warcraft: Orcs & Humans,Stratagus,https://github.com/drodin/Stratagus,war1gus.zip
+Widelans,Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,Download in app
+Wolfenstein 3D,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,.WL6 files
+Wolfenstein RPG,Classic Core Engines,https://github.com/sandstranger/com.mobilerpgpack.phone,Wolfenstein RPG.ipa
+Wolfenstein: Enemy Territory,ET Legacy,https://github.com/etlegacy/etlegacy,etmain folder
+Wolfenstein: Enemy Territory,IdTech4A++,https://github.com/glKarin/com.n0n3m4.diii4a/releases,etmain folder
+Woody Woodpecker: Escape from Buzz Buzzard Park,WoodyRE,https://github.com/jjmhalew/WoodyRE,Need Game Files 
+XCom: Terror from the Deep,Open XCom Android,https://github.com/sfalexrog/openxcom-android,Game Files
+XCom: UFO Defense,Open XCom Android,https://github.com/sfalexrog/openxcom-android,Game Files
+Doom 3: The Lost Mission,Delta Touch,https://play.google.com/store/apps/details?id=com.opentouchgaming.deltatouch,d3le folder
